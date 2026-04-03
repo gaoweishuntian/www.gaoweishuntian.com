@@ -1795,42 +1795,30 @@
 
                 <div class="contact-form">
                     <div class="form-success" id="formSuccess">✓ 感谢您的咨询，我们会尽快与您联系！</div>
-                    <form onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">姓名 *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">公司名称 *</label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">联系电话 *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">电子邮件</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="category">产品类别 *</label>
-                            <select id="category" name="category" required>
-                                <option value="">-- 请选择产品类别 --</option>
-                                <option value="plc">PLC可编程控制器</option>
-                                <option value="inverter">变频器与软启动器</option>
-                                <option value="servo">伺服驱动系统</option>
-                                <option value="sensor">传感器与检测元件</option>
-                                <option value="hmi">工业触摸屏HMI</option>
-                                <option value="network">工业网络通信</option>
-                                <option value="other">其他工控产品</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">询价内容 *</label>
-                            <textarea id="message" name="message" placeholder="请描述您需要的产品型号、数量及具体需求，我们将尽快为您提供报价..." required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">提交询价申请</button>
-                    </form>
+                   <section style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 500px; margin: 20px auto; background: #fff;">
+    <h3 style="color: #0056b3; margin-top: 0;">在线询价 / 留言</h3>
+    <form action="https://formspree.io/f/xvzvbjal" method="POST">
+        
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">您的姓名：</label>
+            <input type="text" name="name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" placeholder="请输入您的姓名" required>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">联系邮箱：</label>
+            <input type="email" name="email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" placeholder="qdgwst0725@126.com" required>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">询价内容 / 产品型号：</label>
+            <textarea name="message" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; height: 120px; box-sizing: border-box;" placeholder="请描述您需要的工控产品型号或具体需求..." required></textarea>
+        </div>
+
+        <button type="submit" style="width: 100%; background-color: #0056b3; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold;">
+            发送询价邮件
+        </button>
+    </form>
+</section>
                 </div>
             </div>
         </div>
