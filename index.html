@@ -2000,14 +2000,6 @@
         }
 
         // Handle form submission
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const success = document.getElementById('formSuccess');
-            success.classList.add('show');
-            e.target.reset();
-            setTimeout(() => success.classList.remove('show'), 4000);
-        }
-
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
