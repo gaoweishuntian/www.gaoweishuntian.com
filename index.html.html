@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛高威舜天电气技术有限公司 - 工控自动化产品经销商</title>
+    <meta name="description" content="青岛高威舜天电气技术有限公司专业代理销售汇川、三菱、西门子、欧姆龙等国际知名工控品牌，提供PLC、变频器、伺服系统、传感器等全系列工控产品及技术支持服务。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #FAFAFA;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* ===== Announcement Bar ===== */
+        .announcement {
+            background: linear-gradient(90deg, #1B4F72, #2E7D9E);
+            color: white;
+            padding: 0.75rem 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 45;
+        }
+
+        .announcement-content {
+            display: flex;
+            animation: scroll-left 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .announcement-item {
+            padding: 0 2rem;
+            display: inline-block;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ===== Header/Navbar ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(27, 79, 114, 0.97);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #F39C12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .logo-text h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-cta {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+        }
+
+        @media (min-width: 1024px) {
+            .phone-cta {
+                display: flex;
+            }
+        }
+
+        .phone-cta-icon {
+            width: 2rem;
+            height: 2rem;
+            background: #F39C12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .phone-cta-text {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.25rem;
+        }
+
+        .phone-cta-number {
+            font-weight: bold;
+            font-size: 0.875rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+            margin-bottom: -4rem;
+            padding-top: 6rem;
+            padding-bottom: 8rem;
+            margin-top: 2.75rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663505652092/Ro4RcEEKHWvg2hSUtuUDYk/hero-bg-YWFhHzrKEgWWTXjfT5pD7a.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(13, 43, 69, 0.9), rgba(27, 79, 114, 0.75), rgba(13, 43, 69, 0.5));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 48rem;
+            animation: fadeInUp 0.7s ease 0.1s both;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.7s ease 0.2s both;
+        }
+
+        .hero-tag-line {
+            width: 2rem;
+            height: 0.125rem;
+            background: #F39C12;
+        }
+
+        .hero-tag-text {
+            color: #F39C12;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.7s ease 0.3s both;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 3.75rem;
+            }
+        }
+
+        .hero-title .highlight {
+            color: #F39C12;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 32rem;
+            animation: fadeInUp 0.7s ease 0.4s both;
+        }
+
+        .hero-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.7s ease 0.5s both;
+        }
+
+        .hero-highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-highlight-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            border: 1px solid rgba(243, 156, 18, 0.4);
+            background: rgba(243, 156, 18, 0.2);
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            animation: fadeInUp 0.7s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background: #F39C12;
+            color: white;
+            box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #E67E22;
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Stats Section ===== */
+        .stats {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1B4F72;
+            font-family: 'Barlow Condensed', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* ===== Products Section ===== */
+        .products {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header-tag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header-tag-line {
+            width: 2rem;
+            height: 0.125rem;
+            background: #F39C12;
+        }
+
+        .section-header-tag-text {
+            color: #F39C12;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 900;
+            color: #1B4F72;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        .section-desc {
+            color: #999;
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        .product-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-tab {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .product-tab:hover {
+            border-color: #F39C12;
+            color: #F39C12;
+        }
+
+        .product-tab.active {
+            background: #1B4F72;
+            color: white;
+            border-color: #1B4F72;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(27, 79, 114, 0.15);
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: #F39C12;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-brand {
+            font-size: 0.75rem;
+            color: #999;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .product-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .product-tag:hover {
+            background: #1B4F72;
+            color: white;
+        }
+
+        /* ===== Brands Section ===== */
+        .brands {
+            padding: 5rem 0;
+            background: #EBF5FB;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .brand-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .brand-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin: 0 auto 0.75rem;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            color: #1B4F72;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-country {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .guarantee-banner {
+            background: white;
+            border-left: 4px solid #F39C12;
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guarantee-item {
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guarantee-title {
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.5rem;
+        }
+
+        .guarantee-desc {
+            font-size: 0.875rem;
+            color: #999;
+        }
+
+        /* ===== Services Section ===== */
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-desc {
+            font-size: 0.875rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .service-highlight {
+            background: #EBF5FB;
+            color: #1B4F72;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .service-banner {
+            background: linear-gradient(135deg, #1B4F72, #2E7D9E);
+            color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-banner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-banner-item {
+            text-align: center;
+        }
+
+        .service-banner-number {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-banner-title {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .service-banner-desc {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== Cases Section ===== */
+        .cases {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .case-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1B4F72, #F39C12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-title {
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-location {
+            font-size: 0.75rem;
+            color: #F39C12;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-result {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .case-desc {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #999;
+            flex-wrap: wrap;
+        }
+
+        /* ===== About Section ===== */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: #1B4F72;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .about-feature {
+            background: #EBF5FB;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .about-feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-feature-text {
+            font-size: 0.875rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #1B4F72, #F39C12);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #F39C12;
+            min-width: 60px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        /* ===== News Section ===== */
+        .news {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .news-category {
+            background: #F39C12;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 1rem 0 1rem;
+        }
+
+        .news-date {
+            color: #999;
+            font-size: 0.75rem;
+            margin: 0.5rem 1rem;
+        }
+
+        .news-title {
+            font-weight: 700;
+            color: #1B4F72;
+            margin: 0.5rem 1rem;
+            font-size: 1rem;
+        }
+
+        .news-desc {
+            color: #666;
+            font-size: 0.875rem;
+            margin: 0.75rem 1rem;
+            line-height: 1.5;
+        }
+
+        .news-link {
+            color: #F39C12;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin: 1rem;
+            display: inline-block;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact {
+            padding: 5rem 0;
+            background: #EBF5FB;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 2fr 3fr;
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: #1B4F72;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            font-size: 1.125rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 2.25rem;
+            height: 2.25rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .contact-text-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-text-value {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .contact-text-sub {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .wechat-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .wechat-card h3 {
+            font-weight: 700;
+            color: #1B4F72;
+            margin-bottom: 0.75rem;
+        }
+
+        .wechat-content {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .wechat-qr {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .wechat-text {
+            flex: 1;
+        }
+
+        .wechat-text p {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .wechat-id {
+            color: #1B4F72;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1B4F72;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #F39C12;
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.875rem;
+            background: #F39C12;
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .form-submit:hover {
+            background: #E67E22;
+        }
+
+        .form-success {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #1B4F72;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #F39C12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .footer-logo-text h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .footer-logo-text p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-desc {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            padding-left: 0.25rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===== Floating CTA ===== */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 40;
+        }
+
+        .floating-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: #F39C12;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .floating-btn {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ===== Utilities ===== */
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        <div class="announcement-content">
+            <div class="announcement-item">🎯 西门子S7-1200系列PLC现货特惠，欢迎咨询</div>
+            <div class="announcement-item">📦 欧姆龙传感器批量采购享九折优惠，联系：+86-17753201114</div>
+            <div class="announcement-item">🔧 施耐德ATV320变频器大量现货，当日发货</div>
+            <div class="announcement-item">💡 新客户首单享专属折扣，详情请咨询客服</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <div class="logo-icon">GW</div>
+                    <div class="logo-text">
+                        <h1>青岛高威舜天电气技术有限公司</h1>
+                        <p>GAOWEI ELECTRIC</p>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">首页</a>
+                    <a href="#products" class="nav-link">产品中心</a>
+                    <a href="#brands" class="nav-link">品牌代理</a>
+                    <a href="#services" class="nav-link">技术服务</a>
+                    <a href="#cases" class="nav-link">成功案例</a>
+                    <a href="#about" class="nav-link">关于我们</a>
+                    <a href="#contact" class="nav-link">联系我们</a>
+                </div>
+                <div class="phone-cta">
+                    <div class="phone-cta-icon">☎</div>
+                    <div>
+                        <div class="phone-cta-text">咨询热线</div>
+                        <div class="phone-cta-number">+86-17753201114</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <div class="hero-tag-line"></div>
+                    <span class="hero-tag-text">Industrial Automation Distributor</span>
+                </div>
+                <h1 class="hero-title">工控自动化<br><span class="highlight">产品经销商</span></h1>
+                <p class="hero-subtitle">深耕青岛工控行业多年，代理销售汇川、三菱、西门子、欧姆龙、施耐德等国际知名品牌，以及海外备件产品，提供PLC、变频器、伺服系统、传感器等全系列工控产品及技术支持服务。</p>
+                <div class="hero-highlights">
+                    <div class="hero-highlight">
+                        <div class="hero-highlight-icon">✓</div>
+                        <span>正品保障</span>
+                    </div>
+                    <div class="hero-highlight">
+                        <div class="hero-highlight-icon">★</div>
+                        <span>行业经验</span>
+                    </div>
+                    <div class="hero-highlight">
+                        <div class="hero-highlight-icon">📦</div>
+                        <span>快速发货</span>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">浏览产品目录</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">立即咨询报价</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">年行业经验</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">服务客户</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20000+</div>
+                    <div class="stat-label">产品型号</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">客户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Product Center</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">产品中心</h2>
+                <p class="section-desc">代理国内外知名工控品牌，提供PLC、变频器、伺服系统、传感器、HMI触摸屏、工业网络等全系列自动化产品，现货充足，快速发货。</p>
+            </div>
+
+            <div class="product-tabs">
+                <button class="product-tab active" onclick="filterProducts('all', event)">全部产品</button>
+                <button class="product-tab" onclick="filterProducts('plc', event)">PLC控制器</button>
+                <button class="product-tab" onclick="filterProducts('inverter', event)">变频器</button>
+                <button class="product-tab" onclick="filterProducts('servo', event)">伺服系统</button>
+                <button class="product-tab" onclick="filterProducts('sensor', event)">传感器</button>
+                <button class="product-tab" onclick="filterProducts('hmi', event)">触摸屏HMI</button>
+                <button class="product-tab" onclick="filterProducts('network', event)">工业网络</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brands">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Authorized Brands</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">授权代理品牌</h2>
+                <p class="section-desc">与国际知名工控品牌建立长期授权合作关系，确保产品正品保障，提供完善的售后技术支持</p>
+            </div>
+
+            <div class="brands-grid" id="brandsGrid">
+                <!-- Brands will be inserted here by JavaScript -->
+            </div>
+
+            <div class="guarantee-banner">
+                <div class="guarantee-grid">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">✔</div>
+                        <div class="guarantee-title">正品保障</div>
+                        <div class="guarantee-desc">所有产品均为原厂授权产品</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🔧</div>
+                        <div class="guarantee-title">技术支持</div>
+                        <div class="guarantee-desc">团队提供24小时技术支持</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">📦</div>
+                        <div class="guarantee-title">快速发货</div>
+                        <div class="guarantee-desc">青岛本地仓储，全国配送</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Technical Services</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">技术服务</h2>
+                <p class="section-desc">不仅仅是产品销售，我们提供从选型、供货到售后的全链条服务，成为您可靠的工控技术伙伴</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <div class="service-title">选型咨询</div>
+                    <div class="service-desc">工程师根据您的工艺需求，提供产品选型方案，避免选型错误造成的损失</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">工艺分析</div>
+                        <div class="service-highlight">参数匹配</div>
+                        <div class="service-highlight">方案对比</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <div class="service-title">现货供应</div>
+                    <div class="service-desc">青岛本地仓储，常备主流型号现货，支持当日发货，满足紧急生产需求</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">当日发货</div>
+                        <div class="service-highlight">全国配送</div>
+                        <div class="service-highlight">大批量优惠</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <div class="service-title">调试支持</div>
+                    <div class="service-desc">提供产品安装调试指导，远程或现场技术支持，确保设备快速投入正常运行</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">远程指导</div>
+                        <div class="service-highlight">现场服务</div>
+                        <div class="service-highlight">参数设置</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <div class="service-title">售后保障</div>
+                    <div class="service-desc">完善的售后服务体系，产品质量问题快速响应处理，让您的生产无后顾之忧</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">快速响应</div>
+                        <div class="service-highlight">原厂质保</div>
+                        <div class="service-highlight">维修服务</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <div class="service-title">技术培训</div>
+                    <div class="service-desc">定期举办工控技术培训课程，帮助您的工程师团队掌握先进的自动化技术</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">PLC编程</div>
+                        <div class="service-highlight">变频调速</div>
+                        <div class="service-highlight">网络通信</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <div class="service-title">系统集成</div>
+                    <div class="service-desc">提供自动化系统整体解决方案，从设计到实施全程服务，助力工厂智能化升级</div>
+                    <div class="service-highlights">
+                        <div class="service-highlight">方案设计</div>
+                        <div class="service-highlight">硬件配套</div>
+                        <div class="service-highlight">项目管理</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-banner">
+                <div class="service-banner-grid">
+                    <div class="service-banner-item">
+                        <div class="service-banner-number">2小时</div>
+                        <div class="service-banner-title">技术响应时间</div>
+                        <div class="service-banner-desc">工作日内快速回复</div>
+                    </div>
+                    <div class="service-banner-item">
+                        <div class="service-banner-number">24/7</div>
+                        <div class="service-banner-title">紧急服务热线</div>
+                        <div class="service-banner-desc">生产紧急情况随时联系</div>
+                    </div>
+                    <div class="service-banner-item">
+                        <div class="service-banner-number">1年+</div>
+                        <div class="service-banner-title">质保服务</div>
+                        <div class="service-banner-desc">原厂质保期内免费维修</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Success Cases</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">成功案例</h2>
+                <p class="section-desc">深耕青岛及山东地区工控市场，服务各类制造企业，以专业技术助力工厂智能化升级</p>
+            </div>
+
+            <div class="cases-grid" id="casesGrid">
+                <!-- Cases will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">About Us</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">关于我们</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>青岛高威舜天电气技术有限公司</h3>
+                    <p>青岛高威舜天电气技术有限公司是山东省青岛市专业的工控自动化产品经销商。公司位于青岛市城阳区东流亭工业园区，毗邻青岛港，辐射山东全省及周边地区。</p>
+                    <p>经过多年的发展，公司已成为可信的工控产品经销商，拥有工程师团队和完善的仓储物流体系。</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div class="about-feature-text">工商注册经营，具备完整的工控产品经销资质</div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div class="about-feature-text">与多家知名工控品牌签订授权经销协议</div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div class="about-feature-text">工程师团队，持有相关技术认证资格</div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div class="about-feature-text">完善的仓储物流体系，青岛本地快速发货</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">公司成立</div>
+                                <div class="timeline-desc">开启了在自动化行业的探索与深耕</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2016</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">市场布局</div>
+                                <div class="timeline-desc">布局本地市场，与多家企业建立合作联系</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2018</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">品牌授权</div>
+                                <div class="timeline-desc">获得国内外众多品牌授权，业务覆盖全山东</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">持续发展</div>
+                                <div class="timeline-desc">累计服务客户超100家，与客户共同成长，实现合作共赢</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">🏭</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Industry News</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">行业资讯</h2>
+                <p class="section-desc">关注工控行业行业动态，分享技术知识</p>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-category">行业动态</div>
+                    <div class="news-date">2024-03-15</div>
+                    <div class="news-title">工业4.0背景下，PLC与工业互联网融合趋势分析</div>
+                    <div class="news-desc">随着工业4.0的深入推进，传统PLC正在向智能化、网络化方向演进，OPC UA、MQTT等工业通信协议逐渐成为标配...</div>
+                    <a href="#" class="news-link">阅读全文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-category">技术分享</div>
+                    <div class="news-date">2024-03-10</div>
+                    <div class="news-title">变频器选型指南：如何根据负载特性选择合适的变频器</div>
+                    <div class="news-desc">变频器选型是工控系统设计中的关键环节，本文从负载类型、功率匹配、环境条件等多个维度详细介绍选型方法...</div>
+                    <a href="#" class="news-link">阅读全文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-category">产品资讯</div>
+                    <div class="news-date">2024-03-05</div>
+                    <div class="news-title">西门子SIMATIC S7-1500新款模块正式上市，性能大幅提升</div>
+                    <div class="news-desc">西门子推出的S7-1500系列新款I/O模块，性能优异，支持更高精度的模拟量采集，适用于精密制造场景...</div>
+                    <a href="#" class="news-link">阅读全文 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-tag">
+                    <div class="section-header-tag-line"></div>
+                    <span class="section-header-tag-text">Contact Us</span>
+                    <div class="section-header-tag-line"></div>
+                </div>
+                <h2 class="section-title">联系我们</h2>
+                <p class="section-desc">无论您有产品咨询、技术问题还是合作意向，我们的团队随时为您提供帮助</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>联系方式</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">☎</div>
+                            <div>
+                                <div class="contact-text-label">咨询热线</div>
+                                <div class="contact-text-value">+86-17753201114</div>
+                                <div class="contact-text-sub">工作日 9:00-18:00</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <div class="contact-text-label">公司电话</div>
+                                <div class="contact-text-value">0532-80937303</div>
+                                <div class="contact-text-sub">工作日 9:00-18:00</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉</div>
+                            <div>
+                                <div class="contact-text-label">电子邮件</div>
+                                <div class="contact-text-value">qdgwst0725@126.com</div>
+                                <div class="contact-text-sub">24小时内回复</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-text-label">公司地址</div>
+                                <div class="contact-text-value">山东省青岛市城阳区东流亭工业园区</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <div class="contact-text-label">营业时间</div>
+                                <div class="contact-text-value">周一至周五 9:00-18:00</div>
+                                <div class="contact-text-sub">法定节假日除外</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wechat-card">
+                        <h3>微信扫码咨询</h3>
+                        <div class="wechat-content">
+                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663505652092/Ro4RcEEKHWvg2hSUtuUDYk/pasted_file_F0uERZ_a1ef79522851107cf62d92bb14601728_705a27ea.jpg" alt="微信二维码" class="wechat-qr">
+                            <div class="wechat-text">
+                                <p>扫描二维码添加微信，获取专属报价和技术支持服务</p>
+                                <div class="wechat-id">微信号：Easen711</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <div class="form-success" id="formSuccess">✓ 感谢您的咨询，我们会尽快与您联系！</div>
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">公司名称 *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话 *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮件</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">产品类别 *</label>
+                            <select id="category" name="category" required>
+                                <option value="">-- 请选择产品类别 --</option>
+                                <option value="plc">PLC可编程控制器</option>
+                                <option value="inverter">变频器与软启动器</option>
+                                <option value="servo">伺服驱动系统</option>
+                                <option value="sensor">传感器与检测元件</option>
+                                <option value="hmi">工业触摸屏HMI</option>
+                                <option value="network">工业网络通信</option>
+                                <option value="other">其他工控产品</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">询价内容 *</label>
+                            <textarea id="message" name="message" placeholder="请描述您需要的产品型号、数量及具体需求，我们将尽快为您提供报价..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">提交询价申请</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">GW</div>
+                        <div class="footer-logo-text">
+                            <h4>青岛高威舜天电气技术有限公司</h4>
+                            <p>GAOWEI ELECTRICAL</p>
+                        </div>
+                    </div>
+                    <div class="footer-desc">深耕青岛工控行业15年，专业代理西门子、欧姆龙、施耐德等国际知名品牌，提供全系列工控自动化产品及专业技术服务。</div>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">☎ +86-17753201114</div>
+                        <div class="footer-contact-item">✉ qdgwst0725@126.com</div>
+                        <div class="footer-contact-item">📍 青岛市高新区东流亭工业园区</div>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>产品中心</h4>
+                        <a href="#products">PLC可编程控制器</a>
+                        <a href="#products">变频器与软启动器</a>
+                        <a href="#products">伺服驱动系统</a>
+                        <a href="#products">传感器与检测</a>
+                        <a href="#products">工业触摸屏HMI</a>
+                        <a href="#products">工业网络通信</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>代理品牌</h4>
+                        <a href="#brands">西门子 SIEMENS</a>
+                        <a href="#brands">欧姆龙 OMRON</a>
+                        <a href="#brands">施耐德 SCHNEIDER</a>
+                        <a href="#brands">ABB集团</a>
+                        <a href="#brands">三菱电机</a>
+                        <a href="#brands">基恩士 KEYENCE</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>服务支持</h4>
+                        <a href="#services">选型咨询服务</a>
+                        <a href="#services">技术调试支持</a>
+                        <a href="#services">售后保障服务</a>
+                        <a href="#services">技术培训课程</a>
+                        <a href="#services">系统集成服务</a>
+                        <a href="#services">备件供应服务</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 青岛高威舜天电气技术有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <button class="floating-btn" title="拨打电话" onclick="window.location.href='tel:+86-17753201114'">☎</button>
+        <button class="floating-btn" title="返回顶部" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    </div>
+
+    <script>
+        // Products data
+        const products = [
+            { category: 'plc', name: '西门子 S7-1200', brand: 'SIEMENS', desc: '紧凑型可编程控制器，适用于中小型自动化任务', tags: ['PROFINET', '14DI/10DO', '2AI'], badge: '热销' },
+            { category: 'plc', name: '西门子 S7-1500', brand: 'SIEMENS', desc: '高性能PLC，适用于复杂自动化和运动控制', tags: ['PROFINET', 'Motion Control', 'Safety'], badge: '热销' },
+            { category: 'plc', name: '欧姆龙 CP2E', brand: 'OMRON', desc: '经济型一体化PLC，内置以太网通信功能', tags: ['EtherNet/IP', '16点I/O', '内置USB'], badge: null },
+            { category: 'plc', name: '欧姆龙 NX1P2', brand: 'OMRON', desc: '机器自动化控制器，高速运动控制', tags: ['EtherCAT', '16轴', 'IEC 61131-3'], badge: '新品' },
+            { category: 'inverter', name: '西门子 G120C', brand: 'SIEMENS', desc: '紧凑型变频器，集成安全功能，适用于泵风机', tags: ['0.55-18.5kW', 'PROFINET', 'STO安全'], badge: '热销' },
+            { category: 'inverter', name: '施耐德 ATV320', brand: 'SCHNEIDER', desc: '多功能变频器，适用于各类机械设备', tags: ['0.18-15kW', 'Modbus', 'CANopen'], badge: null },
+            { category: 'servo', name: '西门子 S120', brand: 'SIEMENS', desc: '模块化伺服驱动系统，支持多种电机类型', tags: ['PROFINET', '多轴', '高精度'], badge: '热销' },
+            { category: 'servo', name: '欧姆龙 R7D', brand: 'OMRON', desc: '紧凑型伺服驱动器，集成控制功能', tags: ['EtherCAT', '高响应', '低噪声'], badge: null },
+            { category: 'sensor', name: '倍加福 NBN', brand: '倍加福', desc: '接近开关，用于位置检测和限位控制', tags: ['M12连接', '防水', '高可靠性'], badge: null },
+            { category: 'hmi', name: '西门子 KTP400', brand: 'SIEMENS', desc: '4英寸工业触摸屏，支持多种通信协议', tags: ['4英寸', 'PROFINET', '防水'], badge: null },
+            { category: 'hmi', name: '欧姆龙 NB3Q', brand: 'OMRON', desc: '3.5英寸彩色触摸屏，适用于小型应用', tags: ['3.5英寸', 'Modbus', '低功耗'], badge: null },
+            { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
+        ];
+
+        const brands = [
+            { name: 'MITSUBISHI', fullName: '三菱', country: '日本', color: '#E60012' },
+            { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#CC0000' },
+            { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
+            { name: 'SCHNEIDER', fullName: '施耐德', country: '法国', color: '#3DCD58' },
+            { name: 'SMC', fullName: 'SMC', country: '日本', color: '#FF6600' },
+            { name: 'REXROTH', fullName: '力士乐', country: '德国', color: '#0066CC' },
+            { name: 'DELIXI', fullName: '德力西', country: '中国', color: '#E60012' },
+            { name: 'NACHI', fullName: '纳克乐', country: '日本', color: '#003087' },
+            { name: 'BMB', fullName: 'BMB电机', country: '韩国', color: '#FF0000' },
+            { name: 'SAMYANG', fullName: '三洋电机', country: '韩国', color: '#0066CC' },
+            { name: 'LCM', fullName: 'LCM电主轴', country: '韩国', color: '#FF6600' },
+            { name: 'HYUNDAI', fullName: '现代变频器', country: '韩国', color: '#003087' },
+            { name: 'LS', fullName: 'LS伺服', country: '韩国', color: '#E60012' },
+            { name: 'HADO', fullName: 'HADO搅拌器', country: '韩国', color: '#0066CC' },
+            { name: 'HYOSUNG', fullName: '晓星重工', country: '韩国', color: '#FF6600' },
+            { name: 'ANIMATICS', fullName: 'ANIMATICS', country: '美国', color: '#003087' },
+            { name: 'PF', fullName: '倍加福', country: '德国', color: '#E60012' },
+            { name: 'ELET', fullName: 'ELET主轴', country: '意大利', color: '#0066CC' },
+        ];
+
+        const cases = [
+            { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
+            { title: '食品饮料', location: '青岛市即墨区', result: '能源消耗有效降低', desc: '食品包装生产线变频节能改造。为某食品企业包装线提供施耐德ATV320变频器整体解决方案，实现电机软启动和变频调速，能源消耗有效降低。', tags: ['施耐德 ATV320', '欧姆龙 E3Z传感器', '威纶通 HMI'], icon: '🏭' },
+            { title: '化工制造', location: '青岛市黄岛区', result: '系统稳定性有效提升', desc: '化工厂DCS系统升级改造。协助某化工企业完成老旧控制系统升级，提供西门子S7-400 PLC及工业以太网解决方案，系统稳定性大幅提升。', tags: ['西门子 S7-400', 'SCALANCE交换机', '欧姆龙传感器'], icon: '⚗️' },
+            { title: '港口物流', location: '青岛港', result: '装卸效率有效提升', desc: '港口起重设备电气系统改造。为青岛港口起重机提供ABB变频器及欧姆龙PLC控制系统，实现精准定位控制，提升装卸效率和安全性。', tags: ['ABB ACS580', '欧姆龙 NX1P2', '基恩士传感器'], icon: '🚢' },
+            { title: '纺织机械', location: '青岛市胶州市', result: '产品质量有效提升', desc: '纺织机械伺服控制系统升级。为纺织企业提供松下A6伺服系统整体解决方案，实现纺织机械高精度张力控制，产品质量显著提升。', tags: ['松下 A6伺服', '欧姆龙 CP2E', '台达 HMI'], icon: '🧵' },
+            { title: '电子制造', location: '青岛市李沧区', result: '检测效率有效提升', desc: 'SMT贴片生产线自动化控制。为电子制造企业SMT生产线提供三菱PLC及视觉检测系统集成方案，实现全自动化质量检测。', tags: ['三菱 Q系列PLC', '基恩士视觉传感器', '工业以太网'], icon: '📱' },
+        ];
+
+        // Render products
+        function renderProducts(category = 'all') {
+            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+            const html = filtered.map(p => `
+                <div class="product-card">
+                    ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-brand">${p.brand}</div>
+                    <div class="product-desc">${p.desc}</div>
+                    <div class="product-tags">
+                        ${p.tags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('productsGrid').innerHTML = html;
+        }
+
+        // Render brands
+        function renderBrands() {
+            const html = brands.map(b => `
+                <div class="brand-card">
+                    <div class="brand-icon" style="background-color: ${b.color}">${b.name.slice(0, 2)}</div>
+                    <div class="brand-name">${b.fullName}</div>
+                    <div class="brand-country">${b.country}</div>
+                </div>
+            `).join('');
+            document.getElementById('brandsGrid').innerHTML = html;
+        }
+
+        // Render cases
+        function renderCases() {
+            const html = cases.map(c => `
+                <div class="case-card">
+                    <div class="case-image">${c.icon}</div>
+                    <div class="case-content">
+                        <div class="case-title">${c.title}</div>
+                        <div class="case-location">${c.location}</div>
+                        <div class="case-result">${c.result}</div>
+                        <div class="case-desc">${c.desc}</div>
+                        <div class="case-meta">
+                            ${c.tags.map(tag => `<span>${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('casesGrid').innerHTML = html;
+        }
+
+        // Filter products
+        function filterProducts(category, event) {
+            document.querySelectorAll('.product-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            renderProducts(category);
+        }
+
+        // Handle form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const success = document.getElementById('formSuccess');
+            success.classList.add('show');
+            e.target.reset();
+            setTimeout(() => success.classList.remove('show'), 4000);
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize
+        renderProducts();
+        renderBrands();
+        renderCases();
+    </script>
+</body>
+</html>
