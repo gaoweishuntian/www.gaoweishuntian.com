@@ -9,6 +9,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* 弹窗背景阴影 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    justify-content: center; align-items: center;
+}
+
+/* 弹窗内容白盒 */
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    line-height: 1.8;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    font-size: 2rem; cursor: pointer; color: #666;
+}
+
+.news-link-btn {
+    background: none; border: none; color: #f39c12; 
+    font-weight: bold; cursor: pointer; padding: 0;
+    margin-top: 1rem;
+}
+
+.news-link-btn:hover { color: #e67e22; }
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -1718,29 +1756,36 @@
 
             <div class="news-grid">
     <div class="news-card">
-        <div class="news-category">行业动态</div>
+        <div class="news-badge">行业动态</div>
         <div class="news-date">2026-04-05</div>
-        <div class="news-title">汇川技术发布全新第五代高性能变频器，定义能效新标准</div>
-        <div class="news-desc">汇川技术在最新发布会上展示了MD系列高性能变频器的最新迭代版本，通过深度集成AI控算法，进一步降低了复杂工况下的能耗。</div>
-        <a href="https://www.inovance.com/cn/news/list" target="_blank" class="news-link">阅读全文 →</a>
+        <h3 class="news-title">汇川技术高性能变频器应用方案</h3>
+        <p class="news-desc">针对现代工厂对能效的严苛要求，我们提供基于汇川MD系列变频器的全套节能改造方案...</p>
+        <button class="news-link-btn" onclick="openNews(1)">阅读全文 →</button>
     </div>
 
     <div class="news-card">
-        <div class="news-category">产品资讯</div>
+        <div class="news-badge">产品资讯</div>
         <div class="news-date">2026-03-28</div>
-        <div class="news-title">APEX Dynamics 高精度减速机成功应用于柔性协作机器人</div>
-        <div class="news-desc">APEX最新推出的AF/AFR系列减速机凭借超低背隙和高刚性特性，成为多家头部协作机器人企业的首选传动方案。</div>
-        <a href="http://www.apexdyna.cn/News/Index" target="_blank" class="news-link">阅读全文 →</a>
+        <h3 class="news-title">APEX高精度减速机选型指南</h3>
+        <p class="news-desc">APEX减速机以高刚性和长寿命著称。本文为您解析在协作机器人中如何选择最匹配的AFR系列...</p>
+        <button class="news-link-btn" onclick="openNews(2)">阅读全文 →</button>
     </div>
 
     <div class="news-card">
-        <div class="news-category">技术分享</div>
+        <div class="news-badge">技术分享</div>
         <div class="news-date">2026-03-20</div>
-        <div class="news-title">欧姆龙数据分析服务助力工厂实现透明化“碳中和”生产</div>
-        <div class="news-desc">欧姆龙展示了i-BELT数据分析服务的最新成果，通过对生产线电流及振动的实时监测，实现对设备故障的“零时差”预判。</div>
-        <a href="https://www.fa.omron.com.cn/news_list" target="_blank" class="news-link">阅读全文 →</a>
+        <h3 class="news-title">欧姆龙传感器在智能产线中的应用</h3>
+        <p class="news-desc">如何通过欧姆龙IO-Link传感器实现生产数据的实时监测？我们的技术团队为您深度解析...</p>
+        <button class="news-link-btn" onclick="openNews(3)">阅读全文 →</button>
     </div>
 </div>
+
+<div id="newsModal" class="modal-overlay" onclick="closeNews()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeNews()">&times;</span>
+        <div id="modalBody">
+            </div>
+    </div>
                 </div>
             </div>
         </div>
@@ -2041,6 +2086,39 @@
         renderProducts();
         renderBrands();
         renderCases();
-    </script>
+    const newsContent = {
+    1: {
+        title: "汇川技术高性能变频器应用方案",
+        body: "<h4>高效、精准、可靠</h4><p>汇川MD系列变频器在青岛某大型纺织企业的改造项目中，实现了综合节能率达15%。我们提供从初步选型到现场调试的全程技术服务，确保设备在复杂工况下稳定运行。</p>"
+    },
+    2: {
+        title: "APEX高精度减速机选型指南",
+        body: "<h4>精密传动的首选</h4><p>APEX Dynamics（台湾精锐）减速机在工业自动化中占据重要地位。其专利的润滑油密封技术解决了漏油痛点。我们库存现货充足，支持当日发货。</p>"
+    },
+    3: {
+        title: "欧姆龙传感器在智能产线中的应用",
+        body: "<h4>感知未来的力量</h4><p>欧姆龙最新的E3AS系列传感器，能够不受物体颜色和材质影响进行稳定检测。我们在青岛自动化展上展示了其在复杂流水线上的精准表现...</p>"
+    }
+};
+
+function openNews(id) {
+    const data = newsContent[id];
+    document.getElementById('modalBody').innerHTML = `
+        <h2 style="color: #2c3e50; margin-bottom: 1rem;">${data.title}</h2>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 1.5rem;">
+        <div style="font-size: 1.1rem; color: #444;">${data.body}</div>
+        <div style="margin-top: 2rem; text-align: center;">
+            <button onclick="closeNews()" style="padding: 0.5rem 2rem; background: #34495e; color: white; border: none; border-radius: 5px; cursor: pointer;">返回列表</button>
+        </div>
+    `;
+    document.getElementById('newsModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 禁止背景滚动
+}
+
+function closeNews() {
+    document.getElementById('newsModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // 恢复滚动
+}
+        </script>
 </body>
 </html>
