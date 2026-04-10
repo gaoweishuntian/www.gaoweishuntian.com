@@ -1964,17 +1964,18 @@
             document.getElementById('productsGrid').innerHTML = html;
         }
 
-        // Render brands
-        function renderBrands() {
-            const html = brands.map(b => `
-                <div class="brand-card">
-                    <div class="brand-icon" style="background-color: ${b.color}">${b.name.slice(0, 2)}</div>
-                    <div class="brand-name">${b.fullName}</div>
-                    <div class="brand-country">${b.country}</div>
-                </div>
-            `).join('');
-            document.getElementById('brandsGrid').innerHTML = html;
-        }
+      function renderBrands() {
+    const html = brands.map(b => `
+        <div class="brand-card">
+            <div class="brand-icon" style="background-color: ${b.color}; font-size: ${b.name.length > 5 ? '0.65rem' : '0.8rem'}">
+                ${b.name}
+            </div>
+            <div class="brand-name">${b.fullName}</div>
+            <div class="brand-country">${b.country}</div>
+        </div>
+    `).join('');
+    document.getElementById('brandsGrid').innerHTML = html;
+}
 
         // Render cases
         function renderCases() {
