@@ -494,19 +494,29 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-
-        .product-card {
+.products-grid {
+    display: grid;
+    /* 关键：350px 保证卡片横向并排，不会占满全行 */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+       .product-card {
             background: white;
-            border: 1px solid #eee;
-            border-radius: 0.5rem;
             padding: 1.5rem;
-            transition: all 0.3s;
-            cursor: pointer;
+            border-radius: 0.75rem;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;           /* 确保同一行的卡片高度一致 */
         }
 
         .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(27, 79, 114, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: #3498db;  /* 悬停时边框变蓝色，突出显示 */
         }
 
         .product-badge {
@@ -657,11 +667,11 @@
         }
 
         .services-grid {
-            display: grid;
-            /* 关键：minmax 改为 320px，确保一行只放 3 个 */
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
+    display: grid;
+    /* 关键：把 320px 改为 380px，强制一行只排 3 个 */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+}
 
         .service-card {
             background: #f9f9f9;
