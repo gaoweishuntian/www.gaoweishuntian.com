@@ -589,17 +589,19 @@
             transform: translateY(-4px);
         }
 
-        .brand-icon {
-            width: 3rem;
-            height: 3rem;
+       .brand-icon {
+            width: 4.8rem;             /* 宽度增加到 4.8rem */
+            height: 3rem;              /* 高度维持 3rem，比例更协调 */
             border-radius: 0.375rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 0.875rem;
+            padding: 0 5px;            /* 左右留出 5 像素安全距离 */
+            box-sizing: border-box;    /* 必须加这一行，防止框子变形 */
             margin: 0 auto 0.75rem;
+            text-align: center;
         }
 
         .brand-name {
@@ -1964,18 +1966,18 @@
             document.getElementById('productsGrid').innerHTML = html;
         }
 
-      function renderBrands() {
-    const html = brands.map(b => `
-        <div class="brand-card">
-            <div class="brand-icon" style="background-color: ${b.color}; font-size: ${b.name.length > 5 ? '0.65rem' : '0.8rem'}">
-                ${b.name}
-            </div>
-            <div class="brand-name">${b.fullName}</div>
-            <div class="brand-country">${b.country}</div>
-        </div>
-    `).join('');
-    document.getElementById('brandsGrid').innerHTML = html;
-}
+     function renderBrands() {
+            const html = brands.map(b => `
+                <div class="brand-card">
+                    <div class="brand-icon" style="background-color: ${b.color}; font-size: ${b.name.length > 9 ? '0.55rem' : (b.name.length > 6 ? '0.7rem' : '0.85rem')}">
+                        ${b.name}
+                    </div>
+                    <div class="brand-name">${b.fullName}</div>
+                    <div class="brand-country">${b.country}</div>
+                </div>
+            `).join('');
+            document.getElementById('brandsGrid').innerHTML = html;
+        }
 
         // Render cases
         function renderCases() {
