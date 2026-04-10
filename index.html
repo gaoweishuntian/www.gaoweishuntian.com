@@ -488,10 +488,11 @@
             border-color: #1B4F72;
         }
 
-        .products-grid {
+       .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            /* 关键：minmax 改为 320px，确保一行只放 3 个 */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .product-card {
@@ -750,23 +751,28 @@
             background: #f9f9f9;
         }
 
-        .cases-grid {
+       .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            /* 关键修改：280 改为 320，auto-fill 改为 auto-fit */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
-        .case-card {
+       .case-card {
             background: white;
-            border-radius: 0.5rem;
+            border-radius: 1rem;
             overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 加一点淡淡的阴影 */
+            transition: all 0.3s ease; /* 让变化变顺滑 */
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee; /* 加一个极细的边框线 */
         }
 
+        /* 增加一个鼠标放上去的效果 */
         .case-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
+            transform: translateY(-5px); /* 向上微微浮起 */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* 阴影加深 */
         }
 
         .case-image {
