@@ -2113,26 +2113,6 @@
             `).join('');
             document.getElementById('brandsGrid').innerHTML = html;
         }
-
-        // Render cases
-        function renderCases() {
-            const html = cases.map(c => `
-                <div class="case-card">
-                    <div class="case-image">${c.icon}</div>
-                    <div class="case-content">
-                        <div class="case-title">${c.title}</div>
-                        <div class="case-location">${c.location}</div>
-                        <div class="case-result">${c.result}</div>
-                        <div class="case-desc">${c.desc}</div>
-                        <div class="case-meta">
-                            ${c.tags.map(tag => `<span>${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-            document.getElementById('casesGrid').innerHTML = html;
-        }
-
         // Filter products
         function filterProducts(category, event) {
             document.querySelectorAll('.product-tab').forEach(tab => tab.classList.remove('active'));
@@ -2192,23 +2172,6 @@
             </div>
         `).join('');
         document.getElementById('brandsGrid').innerHTML = html;
-    }
-
-    function renderCases() {
-        // 这里的 cases 数组在上面定义好后，再渲染
-        const html = cases.map(c => `
-            <div class="case-card">
-                <div class="case-image">${c.icon}</div>
-                <div class="case-content">
-                    <div class="case-title">${c.title}</div>
-                    <div class="case-location">${c.location}</div>
-                    <div class="case-result">${c.result}</div>
-                    <p class="case-desc">${c.desc}</p>
-                    <div class="case-meta">${c.tags.map(t => `<span>${t}</span>`).join('')}</div>
-                </div>
-            </div>
-        `).join('');
-        document.getElementById('casesGrid').innerHTML = html;
     }
 
     function filterProducts(category, event) {
