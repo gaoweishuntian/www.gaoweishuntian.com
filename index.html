@@ -612,12 +612,24 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-.products-grid {
+.product-grid {
     display: grid;
-    /* 关键：350px 保证卡片横向并排，不会占满全行 */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
+    /* 修改这里：从 repeat(4, 1fr) 改成 repeat(3, 1fr) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; /* 间距保持或稍微加大，让呼吸感更强 */
     margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 屏幕稍小时自动变一行2个 */
+    }
+}
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 手机端自动变一行1个 */
+    }
+}
 }
       .product-card {
             background: white;
@@ -629,14 +641,27 @@
             position: relative;
             /* 增加一个淡淡的蓝色阴影，让它更有立体感 */
             box-shadow: 0 4px 10px rgba(0, 86, 179, 0.1);
-        }
+        }  
+        /* 1. 先写鼠标经过的效果（独立出来） */
+.product-card:hover {
+    border-color: #007bff; /* 鼠标放上去时蓝色变亮 */
+    transform: translateY(-5px); /* 轻轻飘起 */
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
+}
 
-        /* 莉莉，再额外加一个鼠标经过时的变色效果，会更高级 */
-        .product-card:hover {
-            border-color: #007bff; /* 鼠标放上去时蓝色变亮 */
-            transform: translateY(-5px); /* 轻轻飘起 */
-            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
-        }
+/* 2. 再写适配屏幕大小的效果（确保它们是一个接一个并列的，不要互相嵌套） */
+
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
             position: relative;
             display: flex;
             flex-direction: column;
