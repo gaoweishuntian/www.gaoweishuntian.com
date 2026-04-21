@@ -2055,11 +2055,6 @@ document.addEventListener('DOMContentLoaded', renderBrands);document.addEventLis
     // 3. 渲染案例（如果你写了 renderCases 函数的话）
     if (typeof renderCases === 'function') renderCases();
 });
-
-// === 莉莉注意：下面这两行是用来“封口”的，防止网页空白 ===
-const cases = []; // 先给它一个空的，保证不报错
-console.log("品牌渲染脚本加载成功！");
-
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
             { title: '食品饮料', location: '青岛市即墨区', result: '能源消耗有效降低', desc: '食品包装生产线变频节能改造。为某食品企业包装线提供施耐德ATV320变频器整体解决方案，实现电机软启动和变频调速，能源消耗有效降低。', tags: ['施耐德 ATV320', '欧姆龙 E3Z传感器', '威纶通 HMI'], icon: '🏭' },
@@ -2068,7 +2063,6 @@ console.log("品牌渲染脚本加载成功！");
             { title: '纺织机械', location: '青岛市胶州市', result: '产品质量有效提升', desc: '纺织机械伺服控制系统升级。为纺织企业提供松下A6伺服系统整体解决方案，实现纺织机械高精度张力控制，产品质量显著提升。', tags: ['松下 A6伺服', '欧姆龙 CP2E', '台达 HMI'], icon: '🧵' },
             { title: '电子制造', location: '青岛市李沧区', result: '检测效率有效提升', desc: 'SMT贴片生产线自动化控制。为电子制造企业SMT生产线提供三菱PLC及视觉检测系统集成方案，实现全自动化质量检测。', tags: ['三菱 Q系列PLC', '基恩士视觉传感器', '工业以太网'], icon: '📱' },
         ];
-
         // Render products
         function renderProducts(category = 'all') {
             const filtered = category === 'all' ? products : products.filter(p => p.category === category);
