@@ -9,17 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+/* 1. 减速机品牌展示网格 - 强制一行3个 */
 #brandsGrid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 30px !important;
-    padding: 20px !important;
-    margin-top: 20px !important;
+    padding: 30px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
+/* 2. 品牌卡片：深蓝色边框 */
 .brand-card {
     background: #ffffff !important;
-    border: 2px solid #0056b3 !important; /* 咱们的核心深蓝色 */
+    border: 2px solid #0056b3 !important;
     border-radius: 12px !important;
     padding: 25px !important;
     text-align: center !important;
@@ -40,63 +43,10 @@
     color: #0056b3 !important;
     font-size: 1.5rem !important;
     font-weight: 800 !important;
-}
-
-/* 解决放大显示不全的问题 */
-@media (max-width: 1200px) {
-    #brandsGrid { grid-template-columns: repeat(2, 1fr) !important; }
-}
-#brandsGrid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 30px !important;
-    padding: 30px 10px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-/* 2. 再写补充规则：手机版或网页放大时，自动变回一行 1 个 */
-@media (max-width: 768px) {
-    #brandsGrid {
-        grid-template-columns: 1fr !important;
-    }
-/* 2. 强制卡片样式：蓝色边框 */
-.brand-card {
-    background: #ffffff !important;
-    border: 2px solid #0056b3 !important; /* 深蓝色 */
-    border-radius: 12px !important;
-    padding: 25px !important;
-    text-align: center !important;
-    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.1) !important;
-    transition: all 0.3s ease !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-/* 3. 鼠标悬停效果 */
-.brand-card:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 24px rgba(0, 86, 179, 0.2) !important;
-    border-color: #007bff !important;
-}
-
-/* 4. 品牌标题加粗 */
-.brand-name {
-    color: #0056b3 !important;
-    font-size: 1.4rem !important;
-    font-weight: 800 !important;
     margin-bottom: 8px !important;
 }
 
-/* 5. 响应式布局：解决放大显示不全 */
-@media (max-width: 1100px) {
-    #brandsGrid { grid-template-columns: repeat(2, 1fr) !important; }
-}
-@media (max-width: 750px) {
-    #brandsGrid { grid-template-columns: 1fr !important; }
-}
-        /* 弹窗背景阴影 */
+/* 3. 弹窗样式 */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -105,88 +55,6 @@
     z-index: 9999;
     justify-content: center; align-items: center;
 }
-/* --- 页脚总布局：实现公司介绍+三列业务并排 --- */
-.footer-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap; /* 保证手机端会自动换行 */
-}
-
-/* 左侧公司介绍宽度 */
-.footer-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* 右侧三列业务格子：强制三列横向并列 */
-.footer-grid {
-    flex: 2; /* 占据更多宽度空间 */
-    display: grid !important; /* 强制开启网格布局 */
-    grid-template-columns: repeat(3, 1fr) !important; /* 核心：平分为三列 */
-    gap: 2rem;
-}
-
-/* 标题样式：白色 */
-.footer-column h3 {
-    color: white !important;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* 列表美化：去掉紫色、圆点和下划线 */
-.footer-column ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.footer-column li {
-    margin-bottom: 0.8rem;
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 14px;
-}
-
-.footer-column a {
-    color: rgba(255, 255, 255, 0.8) !important;
-    text-decoration: none !important;
-    transition: 0.3s;
-}
-
-.footer-column a:hover {
-    color: #fff !important;
-}
-
-/* 底部版权行：加一条细线 */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-}
-
-.footer-column ul {
-    list-style: none; /* 去掉左边的小圆点 */
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column li {
-    margin-bottom: 10px;
-    color: #ffffff;   /* 代理品牌文字变白 */
-}
-
-.footer-column a {
-    color: #ffffff !important; /* 强制链接变白，不显紫色 */
-    text-decoration: none;     /* 去掉下划线 */
-}
-
-.footer-column a:hover {
-    color: #007bff !important; /* 鼠标放上去变蓝色，更有互动感 */
-}
-/* 弹窗内容白盒 */
 .modal-content {
     background: white;
     padding: 2.5rem;
@@ -198,22 +66,54 @@
     position: relative;
     line-height: 1.8;
 }
-
-/* 关闭按钮 */
 .close-btn {
     position: absolute;
     top: 1rem; right: 1.5rem;
     font-size: 2rem; cursor: pointer; color: #666;
 }
 
-.news-link-btn {
-    background: none; border: none; color: #f39c12; 
-    font-weight: bold; cursor: pointer; padding: 0;
-    margin-top: 1rem;
+/* 4. 页脚总布局：三列业务并排 */
+.footer-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
+.footer-info {
+    flex: 1;
+    min-width: 300px;
+}
+.footer-grid {
+    flex: 2;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem;
+}
+.footer-column h3 {
+    color: white !important;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.footer-column ul {
+    list-style: none !important;
+    padding: 0 !important;
+}
+.footer-column li, .footer-column a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    font-size: 14px;
+}
+.footer-column a:hover { color: #007bff !important; }
 
-.news-link-btn:hover { color: #e67e22; }
-    <style>
+/* 5. 响应式适配：解决显示不全 */
+@media (max-width: 1100px) {
+    #brandsGrid, .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 750px) {
+    #brandsGrid, .footer-grid { grid-template-columns: 1fr !important; }
+}
+</style>
         * {
             margin: 0;
             padding: 0;
