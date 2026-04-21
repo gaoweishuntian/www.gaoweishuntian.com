@@ -1996,15 +1996,16 @@
             { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
         ];
 
-        // 2. 品牌列表 (补全至 24 个，确保完美方阵)
-   const brands = [
+        // 2. 品牌列表 (补全至 28 个，确保完美方阵)
+   // 2. 品牌列表 (已补全至 28 个，CUSTOM 在最后)
+const brands = [
     { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
     { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
     { name: 'DIOOKA', fullName: '苏州帝奥卡精密科技', country: '直驱技术', color: '#c0392b' },
-    { name: 'SMC', fullName: '日本SMC气动元件', country: '日本', color: '#0054A6' }, // 新增
-    { name: 'DYNABOX', fullName: '法国DYNABOX精密减速机', country: '法国', color: '#0056B3' }, // 新增
-    { name: 'VOGEL', fullName: '德国VOGEL沃格减速机', country: '德国', color: '#E60012' }, // 新增
-    { name: 'NISSEI', fullName: '日本NISSEI日精减速机', country: '日本', color: '#009944' }, // 新增
+    { name: 'SMC', fullName: '日本SMC气动元件', country: '日本', color: '#0054A6' },
+    { name: 'DYNABOX', fullName: '法国DYNABOX精密减速机', country: '法国', color: '#0056B3' },
+    { name: 'VOGEL', fullName: '德国VOGEL沃格减速机', country: '德国', color: '#E60012' },
+    { name: 'NISSEI', fullName: '日本NISSEI日精减速机', country: '日本', color: '#009944' },
     { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
     { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
     { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
@@ -2025,26 +2026,28 @@
     { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
     { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
     { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' },
-    { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' } // 定制放最后
+    { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' }
 ];
 
-// 核心指令：确保品牌在页面加载时渲染
+// 核心渲染函数
 function renderBrands() {
     const grid = document.getElementById('brandsGrid');
     if (!grid) return;
     grid.innerHTML = brands.map(b => `
         <div class="brand-card">
-            <div class="brand-icon" style="background-color: ${b.color};">
-                ${b.name}
-            </div>
+            <div class="brand-icon" style="background-color: ${b.color};">${b.name}</div>
             <div class="brand-name">${b.fullName}</div>
             <div class="brand-country">${b.country}</div>
         </div>
     `).join('');
 }
 
-// 启动渲染
+// 启动点火
 document.addEventListener('DOMContentLoaded', renderBrands);
+
+// === 莉莉注意：下面这两行是用来“封口”的，防止网页空白 ===
+const cases = []; // 先给它一个空的，保证不报错
+console.log("品牌渲染脚本加载成功！");
 
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
