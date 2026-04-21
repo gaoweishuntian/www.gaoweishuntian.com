@@ -1779,26 +1779,7 @@
         <button class="news-link-btn" onclick="openNews(3)">阅读全文 →</button>
     </div>
 </div>
-<div class="news-card">
-    <div class="news-badge">精密传动</div>
-    <div class="news-date">2026-04-15</div>
-    <h3 class="news-title">德国STEP自消隙技术深度解析</h3>
-    <button class="news-link-btn" onclick="openNews(4)">阅读全文 →</button>
-</div>
 
-<div class="news-card">
-    <div class="news-badge">五轴联动</div>
-    <div class="news-date">2026-04-18</div>
-    <h3 class="news-title">帝奥卡：解决精密加工中的掉刀隐患</h3>
-    <button class="news-link-btn" onclick="openNews(5)">阅读全文 →</button>
-</div>
-
-<div class="news-card">
-    <div class="news-badge">定制服务</div>
-    <div class="news-date">2026-04-20</div>
-    <h3 class="news-title">各类非标定制：解决您的特殊工况难题</h3>
-    <button class="news-link-btn" onclick="openNews(6)">阅读全文 →</button>
-</div>
 <div id="newsModal" class="modal-overlay" onclick="closeNews()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeNews()">&times;</span>
@@ -1944,24 +1925,23 @@
                 </div>
                 <div class="footer-content">
                     <div class="footer-section">
-    <h4>产品中心</h4>
-    <a href="#products">精密减速机系列 (STEP/APEX)</a>
-    <a href="#products">汇川全系列自动化产品</a>
-    <a href="#products">五轴直驱摆头 (帝奥卡)</a>
-    <a href="#products">伺服驱动与运动控制</a>
-    <a href="#products">各类非标定制电机</a>
-    <a href="#products">传感器与工业检测</a>
-</div>
-
-<div class="footer-section">
-    <h4>核心代理品牌</h4>
-    <a href="#brands">德国 STEP 史蒂芬</a>
-    <a href="#brands">苏州帝奥卡 DIOOKA</a>
-    <a href="#brands">汇川技术 INOVANCE</a>
-    <a href="#brands">台湾精锐 APEX</a>
-    <a href="#brands">欧姆龙 OMRON</a>
-    <a href="#brands">西门子 SIEMENS</a>
-</div>
+                        <h4>产品中心</h4>
+                        <a href="#products">PLC可编程控制器</a>
+                        <a href="#products">变频器与软启动器</a>
+                        <a href="#products">伺服驱动系统</a>
+                        <a href="#products">传感器与检测</a>
+                        <a href="#products">工业触摸屏HMI</a>
+                        <a href="#products">工业网络通信</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>代理品牌</h4>
+                        <a href="#brands">西门子 SIEMENS</a>
+                        <a href="#brands">欧姆龙 OMRON</a>
+                        <a href="#brands">施耐德 SCHNEIDER</a>
+                        <a href="#brands">ABB集团</a>
+                        <a href="#brands">三菱电机</a>
+                        <a href="#brands">基恩士 KEYENCE</a>
+                    </div>
                     <div class="footer-section">
                         <h4>服务支持</h4>
                         <a href="#services">选型咨询服务</a>
@@ -2001,64 +1981,31 @@
             { category: 'hmi', name: '欧姆龙 NB3Q', brand: 'OMRON', desc: '3.5英寸彩色触摸屏，适用于小型应用', tags: ['3.5英寸', 'Modbus', '低功耗'], badge: null },
             { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
         ];
-// === 1. 品牌列表 (已补全为 24 个) ===
-const brands = [
-    { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
-    { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
-    { name: 'DIOOKA', fullName: '苏州帝奥卡精密科技', country: '直驱技术', color: '#c0392b' },
-    { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
-    { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
-    { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
-    { name: 'CHIETOM', fullName: '北京智同CHIETOM', country: '北京', color: '#D7000F' },
-    { name: 'TSUNTIEN', fullName: '台湾村田TSUNTIEN', country: '台湾', color: '#0056B3' },
-    { name: 'KOLDBAN', fullName: '德国库德班KOLDBAN', country: '德国', color: '#222222' },
-    { name: 'SEW', fullName: 'SEW', country: '德国', color: '#ED1C24' },
-    { name: 'GGM', fullName: '韩国 GGM', country: '韩国', color: '#0054A6' },
-    { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
-    { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
-    { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
-    { name: 'MITSUBISHI', fullName: '三菱电机', country: '日本', color: '#E60012' },
-    { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
-    { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
-    { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
-    { name: 'LCM', fullName: '韩国LCM电主轴', country: '韩国', color: '#F39C12' },
-    { name: 'ABB', fullName: 'ABB', country: '瑞士', color: '#FF0000' },
-    { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
-    { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
-    { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' },
-    { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' }
-];
 
-// --- 必须保留这一行，它是品牌的“启动键” ---
-renderBrands(); 
+        const brands = [
+            { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
+            { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
+            { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
+            { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
+            { name: 'CHIETOM', fullName: '北京智同CHIETOM', country: '北京', color: '#D7000F' },
+            { name: 'TSUNTIEN', fullName: '台湾村田TSUNTIEN', country: '台湾', color: '#0056B3' },
+            { name: 'KOLDBAN', fullName: '德国库德班KOLDBAN', country: '德国', color: '#222222' },
+            { name: 'SEW', fullName: 'SEW', country: '德国', color: '#ED1C24' },
+            { name: 'GGM', fullName: '韩国 GGM', country: '韩国', color: '#0054A6' },
+            { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
+            { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
+            { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
+            { name: 'MITSUBISHI', fullName: '三菱', country: '日本', color: '#E60012' },
+            { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
+            { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
+            { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
+            { name: 'LCM', fullName: '韩国LCM电主轴', country: '韩国', color: '#F39C12' },
+            { name: 'ABB', fullName: 'ABB', country: '瑞士', color: '#FF0000' },
+            { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
+            { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
+            { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' }
+        ];
 
-// === 2. 行业资讯内容 (100% 合规版) ===
-const newsContent = {
-    1: {
-        title: "汇川技术高性能变频器应用方案",
-        body: `<h4>1. 行业背景</h4><p>汇川MD系列变频器具备卓越的控制性能，助力产线效率提升。</p>`
-    },
-    2: {
-        title: "APEX高精度减速机选型指南",
-        body: `<h4>1. 技术优势</h4><p>APEX以低背隙著称，保障高频运行下的精度稳定。</p>`
-    },
-    3: {
-        title: "欧姆龙传感器在智能产线中的应用",
-        body: `<h4>1. 传感价值</h4><p>欧姆龙高性能传感器，有效保障了产线的顺畅运行。</p>`
-    },
-    4: {
-        title: "德国 STEP (史蒂芬) 自消隙技术解析",
-        body: `<h4>1. 核心优势：自消隙精度保持</h4><p>STEP 采用独特的自消隙模组设计，保障设备在长周期运行中具备卓越的精度保持性。</p>`
-    },
-    5: {
-        title: "帝奥卡 (DIOOKA)：直驱技术助力精密加工",
-        body: `<h4>1. 安全自锁</h4><p>独特设计的自锁结构，有效防止掉刀风险，保障主轴安全。</p><h4>2. 极低磨损直驱</h4><p>采用直驱电机驱动，系统无背隙，助力加工精度持久稳定。</p>`
-    },
-    6: {
-        title: "各类非标定制：为您解决复杂的工控难题",
-        body: `<h4>1. 深度定制方案</h4><p>针对标准产品无法满足的特殊工况，提供从选型到集成的全方位定制服务。</p><h4>2. 资深技术团队</h4><p>具备 15 年以上行业经验，助力为您提供卓越的落地方案。</p>`
-    }
-};
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
             { title: '食品饮料', location: '青岛市即墨区', result: '能源消耗有效降低', desc: '食品包装生产线变频节能改造。为某食品企业包装线提供施耐德ATV320变频器整体解决方案，实现电机软启动和变频调速，能源消耗有效降低。', tags: ['施耐德 ATV320', '欧姆龙 E3Z传感器', '威纶通 HMI'], icon: '🏭' },
@@ -2157,7 +2104,7 @@ const newsContent = {
 <p><strong>精密背隙：</strong> 针对协作机器人和 CNC 机床，我们推荐背隙低至 1-3 弧分的 AF 系列，实现极高的定位精度。</p>
 <p><strong>先进密封：</strong> 传统减速机容易漏油，APEX 采用成熟的密封技术，有效解决润滑油维护和设备“油腻”难题。</p>
 <h4>青岛现货仓储：</h4>
-<p>针对山东地区客户，我们在青岛常备AF/AFR 等主流型号现货。下单即发，缩短您的设备装配周期，快速交付无压力。</p>`
+<p>针对山东地区客户，我们在青岛常备 AB/ABR、AF/AFR 等主流型号现货。下单即发，缩短您的设备装配周期，快速交付无压力。</p>`
     },
     3: {
         title: "欧姆龙传感器在智能产线中的应用",
@@ -2166,38 +2113,6 @@ const newsContent = {
 <h4>技术应用场景：</h4>
 <p><strong>预防性维护：</strong> 通过监测马达的振动和电流变化，欧姆龙的状态监测系统能在故障发生前发出预警，助力实现持续稳定运行生产线。</p>
 <p><strong>本地支持：</strong> 我们的工程师团队熟悉欧姆龙全系列 PLC 与 HMI 的编程调试，可为您的产线升级提供一站式支持。</p>`
-    }
-};
-       4: {
-        title: "德国 STEP (史蒂芬) 自消隙技术解析",
-        body: `<h4>1. 核心优势：自消隙精度保持</h4>
-<p>STEP 采用独特的自消隙模组设计，能够自动补偿运行中的机械磨损，保障设备在长周期运行中具备卓越的精度保持性。</p>
-<h4>2. 性能特点</h4>
-<p><strong>高刚性设计：</strong> 专为机器人关节及高精度机床设计，抗冲击能力强。</p>
-<p><strong>长效润滑：</strong> 内部预注高性能润滑脂，有效降低后期维护成本与频率。</p>`
-    },
-    5: {
-        title: "帝奥卡 (DIOOKA)：直驱技术助力精密加工",
-        body: `<h4>1. 高精密军工品质</h4>
-<p>帝奥卡核心团队具备深厚的精密机械研发背景，其研发的五轴双摆头具备体积小、扭矩大的显著特点。</p>
-<h4>2. 核心技术：安全防掉刀</h4>
-<p><strong>双重保障：</strong> 独特设计的自锁结构，有效防止断电等意外情况下的掉刀风险，保障主轴与工件安全。</p>
-<h4>3. 近乎零磨损直驱</h4>
-<p>采用直驱电机驱动，系统无背隙且具备极高的耐用性，助力加工精度持久稳定。</p>`
-    },
-    6: {
-        title: "各类非标定制：为您解决复杂的工控难题",
-        body: `<h4>1. 深度定制方案</h4>
-<p>针对标准产品无法满足的特殊工况（如特殊空间限制、极端环境、特定负载等），我们提供从选型到系统集成的全方位定制服务。</p>
-<h4>2. 我们的优势</h4>
-<ul>
-    <li><strong>资深技术团队：</strong> 具备 15 年以上行业经验，能够快速理解客户的复杂需求。</li>
-    <li><strong>多品牌整合能力：</strong> 依托公司丰富的品牌资源，实现减速机、电机、传感器等部件的高效匹配。</li>
-    <li><strong>快速响应与交付：</strong> 建立绿色通道，缩短非标件的研发与加工周期。</li>
-</ul>
-<p style="background: #f4f4f4; padding: 15px; border-left: 5px solid #2c3e50; margin-top: 15px;">
-    <strong>Lily 寄语：</strong> 我们不仅是经销商，更是您的技术伙伴。无论您的需求多么独特，我们都助力为您提供卓越的落地方案。
-</p>`
     }
 };
 function openNews(id) {
