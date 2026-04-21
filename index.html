@@ -2043,7 +2043,18 @@ function renderBrands() {
 }
 
 // 启动点火
-document.addEventListener('DOMContentLoaded', renderBrands);
+document.addEventListener('DOMContentLoaded', renderBrands);document.addEventListener('DOMContentLoaded', () => {
+    console.log("网页已加载，开始渲染...");
+    
+    // 1. 渲染品牌
+    if (typeof renderBrands === 'function') renderBrands();
+    
+    // 2. 渲染产品（如果你写了 renderProducts 函数的话）
+    if (typeof renderProducts === 'function') renderProducts();
+    
+    // 3. 渲染案例（如果你写了 renderCases 函数的话）
+    if (typeof renderCases === 'function') renderCases();
+});
 
 // === 莉莉注意：下面这两行是用来“封口”的，防止网页空白 ===
 const cases = []; // 先给它一个空的，保证不报错
