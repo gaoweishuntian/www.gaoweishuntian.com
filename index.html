@@ -1997,7 +1997,7 @@
         ];
 
         // 2. 品牌列表 (补全至 24 个，确保完美方阵)
-    const brands = [
+   const brands = [
     { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
     { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
     { name: 'DIOOKA', fullName: '苏州帝奥卡精密科技', country: '直驱技术', color: '#c0392b' },
@@ -2027,6 +2027,24 @@
     { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' },
     { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' } // 定制放最后
 ];
+
+// 核心指令：确保品牌在页面加载时渲染
+function renderBrands() {
+    const grid = document.getElementById('brandsGrid');
+    if (!grid) return;
+    grid.innerHTML = brands.map(b => `
+        <div class="brand-card">
+            <div class="brand-icon" style="background-color: ${b.color};">
+                ${b.name}
+            </div>
+            <div class="brand-name">${b.fullName}</div>
+            <div class="brand-country">${b.country}</div>
+        </div>
+    `).join('');
+}
+
+// 启动渲染
+document.addEventListener('DOMContentLoaded', renderBrands);
 
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
