@@ -18,13 +18,66 @@
     z-index: 9999;
     justify-content: center; align-items: center;
 }
-/* --- 页脚美化：去掉紫色、下划线和圆点 --- */
-.footer-grid {
+/* --- 页脚总布局：实现公司介绍+三列业务并排 --- */
+.footer-layout {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* 保证手机端会自动换行 */
+}
+
+/* 左侧公司介绍宽度 */
+.footer-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 右侧三列业务格子：强制三列横向并列 */
+.footer-grid {
+    flex: 2; /* 占据更多宽度空间 */
+    display: grid !important; /* 强制开启网格布局 */
+    grid-template-columns: repeat(3, 1fr) !important; /* 核心：平分为三列 */
+    gap: 2rem;
+}
+
+/* 标题样式：白色 */
+.footer-column h3 {
+    color: white !important;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 列表美化：去掉紫色、圆点和下划线 */
+.footer-column ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-column li {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 14px;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #fff !important;
+}
+
+/* 底部版权行：加一条细线 */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
 }
 
 .footer-column ul {
@@ -1945,66 +1998,70 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;">
-                <div>
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">GW</div>
-                        <div class="footer-logo-text">
-                            <h4>青岛高威舜天电气技术有限公司</h4>
-                            <p>GAOWEI ELECTRICAL</p>
-                        </div>
-                    </div>
-                    <div class="footer-desc">深耕青岛工控行业15年，专业代理西门子、欧姆龙、汇川等国际知名品牌，提供全系列工控自动化产品及专业技术服务。</div>
-                    <div class="footer-contact">
-                        <div class="footer-contact-item">☎ +86-17753201114</div>
-                        <div class="footer-contact-item">✉ qdgwst0725@126.com</div>
-                        <div class="footer-contact-item">📍 青岛市城阳区东流亭工业园区</div>
+   <footer>
+    <div class="container">
+        <div class="footer-layout">
+            
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">GW</div>
+                    <div class="footer-logo-text">
+                        <h4>青岛高威舜天电气技术有限公司</h4>
+                        <p>GAOWEI ELECTRICAL</p>
                     </div>
                 </div>
-               <div class="footer-grid">
-    <div class="footer-column">
-        <h3>产品中心</h3>
-        <ul>
-            <li><a href="#products">APEX 精密行星减速机</a></li>
-            <li><a href="#products">德国 STEP/VOGEL 减速机</a></li>
-            <li><a href="#products">贝托 BEITTO 减速机系列</a></li>
-            <li><a href="#products">汇川 INOVANCE 伺服驱动</a></li>
-            <li><a href="#products">欧姆龙 OMRON 控制产品</a></li>
-            <li><a href="#products">SMC 气动与传感器</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-column">
-        <h3>代理品牌</h3>
-        <ul>
-            <li>台湾精锐 APEX / 德国 STEP</li>
-            <li>德国 VOGEL / 贝托 BEITTO</li>
-            <li>汇川 INOVANCE / 欧姆龙 OMRON</li>
-            <li>西门子 SIEMENS / ABB 集团</li>
-            <li>日本 SMC / 施耐德 SCHNEIDER</li>
-            <li>德国库德班 KOLDBAN</li>
-        </ul>
-    </div>
-</div>
-                    <div class="footer-section">
-                        <h4>服务支持</h4>
-                        <a href="#services">选型咨询服务</a>
-                        <a href="#services">技术调试支持</a>
-                        <a href="#services">售后保障服务</a>
-                        <a href="#services">技术培训课程</a>
-                        <a href="#services">系统集成服务</a>
-                        <a href="#services">备件供应服务</a>
-                    </div>
+                <div class="footer-desc">深耕青岛工控行业15年，专业代理西门子、欧姆龙、汇川等国际知名品牌，提供全系列工控自动化产品及专业技术服务。</div>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">☎ +86-17753201114</div>
+                    <div class="footer-contact-item">✉ qdgwst0725@126.com</div>
+                    <div class="footer-contact-item">📍 青岛市城阳区东流亭工业园区</div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 青岛高威舜天电气技术有限公司 版权所有</p>
+
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="#products">APEX 精密行星减速机</a></li>
+                        <li><a href="#products">德国 STEP/VOGEL 减速机</a></li>
+                        <li><a href="#products">贝托 BEITTO 减速机系列</a></li>
+                        <li><a href="#products">汇川 INOVANCE 伺服驱动</a></li>
+                        <li><a href="#products">欧姆龙 OMRON 控制产品</a></li>
+                        <li><a href="#products">SMC 气动与传感器</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>代理品牌</h3>
+                    <ul>
+                        <li>台湾精锐 APEX / 德国 STEP</li>
+                        <li>德国 VOGEL / 贝托 BEITTO</li>
+                        <li>汇川 INOVANCE / 欧姆龙 OMRON</li>
+                        <li>西门子 SIEMENS / ABB 集团</li>
+                        <li>日本 SMC / 施耐德 SCHNEIDER</li>
+                        <li>德国库德班 KOLDBAN</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>服务支持</h3>
+                    <ul>
+                        <li><a href="#services">选型咨询服务</a></li>
+                        <li><a href="#services">技术调试支持</a></li>
+                        <li><a href="#services">售后保障服务</a></li>
+                        <li><a href="#services">技术培训课程</a></li>
+                        <li><a href="#services">系统集成服务</a></li>
+                        <li><a href="#services">备件供应服务</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>© 2026 青岛高威舜天电气技术有限公司 版权所有</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Floating CTA -->
     <div class="floating-cta">
