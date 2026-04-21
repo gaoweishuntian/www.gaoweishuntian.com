@@ -2001,7 +2001,7 @@
             { category: 'hmi', name: '欧姆龙 NB3Q', brand: 'OMRON', desc: '3.5英寸彩色触摸屏，适用于小型应用', tags: ['3.5英寸', 'Modbus', '低功耗'], badge: null },
             { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
         ];
-        // === 1. 品牌列表 (确保 24 个整齐对齐) ===
+// === 1. 品牌列表 (已补全为 24 个) ===
 const brands = [
     { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
     { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
@@ -2017,36 +2017,7 @@ const brands = [
     { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
     { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
     { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
-    { name: 'MITSUBISHI', fullName: '三菱', country: '日本', color: '#E60012' },
-    { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
-    { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
-    { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
-    { name: 'LCM', fullName: '韩国LCM电主轴', country: '韩国', color: '#F39C12' },
-    { name: 'ABB', fullName: 'ABB', country: '瑞士', color: '#FF0000' },
-    { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
-    { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
-    { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' },
-    { name: 'CUSTOM', fullName: '工控件非标定制服务', country: '技术服务', color: '#2c3e50' }
-];
-
-// === 2. 行业资讯内容 (100% 合规版) ===
-// === 1. 品牌列表 (确保 24 个整齐对齐) ===
-const brands = [
-    { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
-    { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
-    { name: 'DIOOKA', fullName: '苏州帝奥卡精密科技', country: '直驱技术', color: '#c0392b' },
-    { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
-    { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
-    { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
-    { name: 'CHIETOM', fullName: '北京智同CHIETOM', country: '北京', color: '#D7000F' },
-    { name: 'TSUNTIEN', fullName: '台湾村田TSUNTIEN', country: '台湾', color: '#0056B3' },
-    { name: 'KOLDBAN', fullName: '德国库德班KOLDBAN', country: '德国', color: '#222222' },
-    { name: 'SEW', fullName: 'SEW', country: '德国', color: '#ED1C24' },
-    { name: 'GGM', fullName: '韩国 GGM', country: '韩国', color: '#0054A6' },
-    { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
-    { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
-    { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
-    { name: 'MITSUBISHI', fullName: '三菱', country: '日本', color: '#E60012' },
+    { name: 'MITSUBISHI', fullName: '三菱电机', country: '日本', color: '#E60012' },
     { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
     { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
     { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
@@ -2058,34 +2029,36 @@ const brands = [
     { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' }
 ];
 
+// --- 必须保留这一行，它是品牌的“启动键” ---
+renderBrands(); 
+
 // === 2. 行业资讯内容 (100% 合规版) ===
 const newsContent = {
     1: {
         title: "汇川技术高性能变频器应用方案",
-        body: "<h4>1. 行业背景</h4><p>汇川MD系列变频器具备卓越的矢量控制性能，能有效提升设备运行稳定性。</p>"
+        body: `<h4>1. 行业背景</h4><p>汇川MD系列变频器具备卓越的控制性能，助力产线效率提升。</p>`
     },
     2: {
         title: "APEX高精度减速机选型指南",
-        body: "<h4>1. 技术优势</h4><p>APEX减速机以卓越的低背隙著称，保障高频运行下的精度恒定。</p>"
+        body: `<h4>1. 技术优势</h4><p>APEX以低背隙著称，保障高频运行下的精度稳定。</p>`
     },
     3: {
         title: "欧姆龙传感器在智能产线中的应用",
-        body: "<h4>1. 传感价值</h4><p>欧姆龙高性能传感器，有效保障了产线的顺畅运行与数据精准采集。</p>"
+        body: `<h4>1. 传感价值</h4><p>欧姆龙高性能传感器，有效保障了产线的顺畅运行。</p>`
     },
     4: {
         title: "德国 STEP (史蒂芬) 自消隙技术解析",
-        body: "<h4>1. 精度保持</h4><p>STEP 独特的自消隙模组设计，保障设备在长周期运行中具备卓越的精度保持性。</p>"
+        body: `<h4>1. 核心优势：自消隙精度保持</h4><p>STEP 采用独特的自消隙模组设计，保障设备在长周期运行中具备卓越的精度保持性。</p>`
     },
     5: {
         title: "帝奥卡 (DIOOKA)：直驱技术助力精密加工",
-        body: "<h4>1. 安全自锁</h4><p>独特设计的自锁结构，有效防止意外掉刀风险，保障主轴与工件安全。</p>"
+        body: `<h4>1. 安全自锁</h4><p>独特设计的自锁结构，有效防止掉刀风险，保障主轴安全。</p><h4>2. 极低磨损直驱</h4><p>采用直驱电机驱动，系统无背隙，助力加工精度持久稳定。</p>`
     },
     6: {
         title: "各类非标定制：为您解决复杂的工控难题",
-        body: "<h4>1. 深度定制</h4><p>针对特殊工况提供从选型到系统集成的全方位定制服务，助力为您提供卓越的落地方案。</p>"
+        body: `<h4>1. 深度定制方案</h4><p>针对标准产品无法满足的特殊工况，提供从选型到集成的全方位定制服务。</p><h4>2. 资深技术团队</h4><p>具备 15 年以上行业经验，助力为您提供卓越的落地方案。</p>`
     }
 };
-
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
             { title: '食品饮料', location: '青岛市即墨区', result: '能源消耗有效降低', desc: '食品包装生产线变频节能改造。为某食品企业包装线提供施耐德ATV320变频器整体解决方案，实现电机软启动和变频调速，能源消耗有效降低。', tags: ['施耐德 ATV320', '欧姆龙 E3Z传感器', '威纶通 HMI'], icon: '🏭' },
