@@ -628,9 +628,6 @@
 @media (max-width: 768px) {
     .product-grid {
         grid-template-columns: 1fr; /* 手机端自动变一行1个 */
-    }
-}
-}
       .product-card {
             background: white;
             padding: 1.5rem;
@@ -652,13 +649,13 @@
 /* 2. 再写适配屏幕大小的效果（确保它们是一个接一个并列的，不要互相嵌套） */
 
 @media (max-width: 1200px) {
-    .products-grid {
+    #brandsGrid{
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
 @media (max-width: 768px) {
-    .products-grid {
+    #brandsGrid {
         grid-template-columns: 1fr !important;
     }
 }
