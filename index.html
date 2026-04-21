@@ -2053,24 +2053,29 @@
             `).join('');
         }
     }
+   function renderCases() {
+    const grid = document.getElementById('casesGrid');
+    if (!grid) return;
 
-    function renderCases() {
-        const grid = document.getElementById('casesGrid');
-        if (grid) {
-            grid.innerHTML = cases.map(c => `
-                <div class="case-card">
-                    <div class="case-image">${c.icon}</div>
-                    <div class="case-content">
-                        <div class="case-title">${c.title}</div>
-                        <div class="case-location">${c.location}</div>
-                        <div class="case-result">${c.result}</div>
-                        <p class="case-desc" style="font-size:0.85rem; color:#666;">${c.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
+    // --- 关键保护：如果此时还没读到 cases 数据，它会报错提醒，但不会让网页变白 ---
+    if (typeof cases === 'undefined') {
+        console.error("❌ 错误：在代码里没找到 cases 数据名单！请检查是否定义了 const cases");
+        return;
     }
 
+    grid.innerHTML = cases.map(c => `
+        <div class="case-card">
+            <div class="case-image">${c.icon}</div>
+            <div class="case-content">
+                <div class="case-title">${c.title}</div>
+                <div class="case-location">${c.location}</div>
+                <div class="case-result">${c.result}</div>
+                <p class="case-desc" style="font-size:0.85rem; color:#666;">${c.desc}</p>
+            </div>
+        </div>
+    `).join('');
+    console.log("✅ 成功案例渲染完成！");
+}
     // 4. 启动点火
     document.addEventListener('DOMContentLoaded', () => {
         console.log("🚀 脚本点火成功！");
