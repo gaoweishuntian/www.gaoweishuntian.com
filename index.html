@@ -1566,25 +1566,25 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <div class="section-header">
-                <div class="section-header-tag">
-                    <div class="section-header-tag-line"></div>
-                    <span class="section-header-tag-text">Product Center</span>
-                    <div class="section-header-tag-line"></div>
-                </div>
-                <h2 class="section-title">产品中心</h2>
-                <p class="section-desc">代理国内外知名工控品牌，提供PLC、变频器、伺服系统、传感器、HMI触摸屏、工业网络等全系列自动化产品，现货充足，快速发货。</p>
-            </div>
+    <div class="section-header">
+        <div class="section-header-tag">
+            <div class="section-header-tag-line"></div>
+            <span class="section-header-tag-text">Product Center</span>
+            <div class="section-header-tag-line"></div>
+        </div>
+        
+        <h2 class="section-title">产品中心</h2>
+        
+        <p class="section-desc">专业代理德国 STEP、台湾精锐 APEX、Muratec 村田 RV、北京智同、苏州帝奥卡等国内外知名精密传动品牌，现货充足，快速发货。</p>
+    </div>
 
-            <div class="product-tabs">
-                <button class="product-tab active" onclick="filterProducts('all', event)">全部产品</button>
-                <button class="product-tab" onclick="filterProducts('plc', event)">PLC控制器</button>
-                <button class="product-tab" onclick="filterProducts('inverter', event)">变频器</button>
-                <button class="product-tab" onclick="filterProducts('servo', event)">伺服系统</button>
-                <button class="product-tab" onclick="filterProducts('sensor', event)">传感器</button>
-                <button class="product-tab" onclick="filterProducts('hmi', event)">触摸屏HMI</button>
-                <button class="product-tab" onclick="filterProducts('network', event)">工业网络</button>
-            </div>
+    <div class="product-tabs">
+        <button class="product-tab active" onclick="filterProducts('all', event)">全部品牌</button>
+        <button class="product-tab" onclick="filterProducts('reducer', event)">精密减速机</button>
+        <button class="product-tab" onclick="filterProducts('motor', event)">伺服电机</button>
+        <button class="product-tab" onclick="filterProducts('controller', event)">控制系统</button>
+    </div>
+</div>
 
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be inserted here by JavaScript -->
@@ -2072,19 +2072,19 @@
     <script>
         // Products data
         const products = [
-            { category: 'plc', name: '西门子 S7-1200', brand: 'SIEMENS', desc: '紧凑型可编程控制器，适用于中小型自动化任务', tags: ['PROFINET', '14DI/10DO', '2AI'], badge: '热销' },
-            { category: 'plc', name: '西门子 S7-1500', brand: 'SIEMENS', desc: '高性能PLC，适用于复杂自动化和运动控制', tags: ['PROFINET', 'Motion Control', 'Safety'], badge: '热销' },
-            { category: 'plc', name: '欧姆龙 CP2E', brand: 'OMRON', desc: '经济型一体化PLC，内置以太网通信功能', tags: ['EtherNet/IP', '16点I/O', '内置USB'], badge: null },
-            { category: 'plc', name: '欧姆龙 NX1P2', brand: 'OMRON', desc: '机器自动化控制器，高速运动控制', tags: ['EtherCAT', '16轴', 'IEC 61131-3'], badge: '新品' },
-            { category: 'inverter', name: '西门子 G120C', brand: 'SIEMENS', desc: '紧凑型变频器，集成安全功能，适用于泵风机', tags: ['0.55-18.5kW', 'PROFINET', 'STO安全'], badge: '热销' },
-            { category: 'inverter', name: '施耐德 ATV320', brand: 'SCHNEIDER', desc: '多功能变频器，适用于各类机械设备', tags: ['0.18-15kW', 'Modbus', 'CANopen'], badge: null },
-            { category: 'servo', name: '西门子 S120', brand: 'SIEMENS', desc: '模块化伺服驱动系统，支持多种电机类型', tags: ['PROFINET', '多轴', '高精度'], badge: '热销' },
-            { category: 'servo', name: '欧姆龙 R7D', brand: 'OMRON', desc: '紧凑型伺服驱动器，集成控制功能', tags: ['EtherCAT', '高响应', '低噪声'], badge: null },
-            { category: 'sensor', name: '倍加福 NBN', brand: '倍加福', desc: '接近开关，用于位置检测和限位控制', tags: ['M12连接', '防水', '高可靠性'], badge: null },
-            { category: 'hmi', name: '西门子 KTP400', brand: 'SIEMENS', desc: '4英寸工业触摸屏，支持多种通信协议', tags: ['4英寸', 'PROFINET', '防水'], badge: null },
-            { category: 'hmi', name: '欧姆龙 NB3Q', brand: 'OMRON', desc: '3.5英寸彩色触摸屏，适用于小型应用', tags: ['3.5英寸', 'Modbus', '低功耗'], badge: null },
-            { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
-        ];
+           { category: 'reducer', name: '德国 STEP 减速机', brand: 'STEP', desc: '德国精密制造，专注机器人关节及高端自动化高转矩方案', tags: ['精密制造', '高转矩'] },
+    { category: 'reducer', name: '台湾精锐 APEX', brand: 'APEX', desc: '全球精密行星减速机领导品牌，具备高刚性、低背隙', tags: ['低背隙', '高效率'] },
+    { category: 'reducer', name: '苏州帝奥卡', brand: 'DIOCARD', desc: '国产精密传动优秀代表，提供性能稳定、性价比极高的行星减速机', tags: ['性价比', '行星减速'] },
+    { category: 'reducer', name: '德国 SEW 减速机', brand: 'SEW', desc: '全球驱动技术专家，以模块化组合著称，提供可靠动力传输', tags: ['模块化', '可靠性'] },
+    { category: 'controller', name: '奥地利 KEBA 控制', brand: 'KEBA', desc: '专注于工业机器人与注塑机控制系统，助力高度自动化', tags: ['机器人控制', '注塑机'] },
+    { category: 'reducer', name: '北京智同 RV 减速机', brand: 'ZITONG', desc: '专注高精密 RV 减速机研发，为工业机器人提供核心关节', tags: ['RV减速', '国产自研'] },
+    { category: 'reducer', name: 'Muratec 台湾村田 RV', brand: 'Muratec', desc: '高精度 RV 减速机专家，广泛应用于精密机械手臂与转台', tags: ['精密转台', 'RV系列'] },
+    { category: 'reducer', name: '台湾法斯顿减速机', brand: 'FASTON', desc: '高性价比精密行星减速机，为自动化设备提供稳健支撑', tags: ['行星减速', '稳健性'] },
+    { category: 'reducer', name: '多摩川 Tamagawa', brand: 'TAMAGAWA', desc: '日本技术背景，高品质伺服专用减速机与编码器', tags: ['伺服专用', '高精度'] },
+    { category: 'reducer', name: '贝托 BEITTO 减速机', brand: 'BEITTO', desc: '精密行星减速机系列，支持多种规格定制，货期短', tags: ['定制化', '快速响应'] },
+    { category: 'reducer', name: '德国库德班 KOLDBAN', brand: 'KOLDBAN', desc: '高端精密机械部件供应商，专注于工业传动系统的配套', tags: ['精密部件', '德国品质'] },
+    { category: 'motor', name: '韩国 LCM 电机', brand: 'LCM', desc: '韩国原装进口，高精度伺服电机与直驱驱动方案', tags: ['原装进口', '伺服电机'] }
+            ];
 
         // 2. 品牌列表 (补全至 28 个，确保完美方阵)
    // 2. 品牌列表 (已补全至 28 个，CUSTOM 在最后)
