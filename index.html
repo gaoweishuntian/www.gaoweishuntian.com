@@ -2200,11 +2200,11 @@
     }
 
     // 页面加载后的启动指令
-    window.onload = function() {
-        renderProducts();
-        renderBrands();
-        renderCases();
-    };
+window.onload = function() {
+    renderProducts();
+    renderBrands();
+    renderCases(); // 这是启动案例显示的“总闸”
+};
 
     window.addEventListener('scroll', () => {
         const header = document.getElementById('header');
