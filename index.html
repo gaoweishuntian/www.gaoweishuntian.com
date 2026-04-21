@@ -1982,29 +1982,33 @@
             { category: 'network', name: '西门子 SCALANCE', brand: 'SIEMENS', desc: '工业以太网交换机，支持PROFINET', tags: ['PROFINET', '冗余', '高可靠性'], badge: null },
         ];
 
-        const brands = [
-            { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
-            { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
-            { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
-            { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
-            { name: 'CHIETOM', fullName: '北京智同CHIETOM', country: '北京', color: '#D7000F' },
-            { name: 'TSUNTIEN', fullName: '台湾村田TSUNTIEN', country: '台湾', color: '#0056B3' },
-            { name: 'KOLDBAN', fullName: '德国库德班KOLDBAN', country: '德国', color: '#222222' },
-            { name: 'SEW', fullName: 'SEW', country: '德国', color: '#ED1C24' },
-            { name: 'GGM', fullName: '韩国 GGM', country: '韩国', color: '#0054A6' },
-            { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
-            { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
-            { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
-            { name: 'MITSUBISHI', fullName: '三菱', country: '日本', color: '#E60012' },
-            { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
-            { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
-            { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
-            { name: 'LCM', fullName: '韩国LCM电主轴', country: '韩国', color: '#F39C12' },
-            { name: 'ABB', fullName: 'ABB', country: '瑞士', color: '#FF0000' },
-            { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
-            { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
-            { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' }
-        ];
+        // 2. 品牌列表 (补全至 24 个，确保完美方阵)
+    const brands = [
+        { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
+        { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
+        { name: 'DIOOKA', fullName: '苏州帝奥卡精密科技', country: '直驱技术', color: '#c0392b' },
+        { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' }, // 新增定制服务
+        { name: 'BEITTO', fullName: '贝托beitto减速机', country: '国产', color: '#E60012' },
+        { name: 'FASTON', fullName: '台湾法斯顿FASTON减速机', country: '台湾', color: '#F39C12' },
+        { name: 'TOMOGAWA', fullName: '多摩川TOMOGAWA减速机', country: '日本', color: '#333333' },
+        { name: 'CHIETOM', fullName: '北京智同CHIETOM', country: '北京', color: '#D7000F' },
+        { name: 'TSUNTIEN', fullName: '台湾村田TSUNTIEN', country: '台湾', color: '#0056B3' },
+        { name: 'KOLDBAN', fullName: '德国库德班KOLDBAN', country: '德国', color: '#222222' },
+        { name: 'SEW', fullName: 'SEW', country: '德国', color: '#ED1C24' },
+        { name: 'GGM', fullName: '韩国 GGM', country: '韩国', color: '#0054A6' },
+        { name: 'GIRARD', fullName: '法国 girard', country: '法国', color: '#0055A4' },
+        { name: 'INOVANCE', fullName: '汇川inovance', country: '中国', color: '#004EA2' },
+        { name: 'OMRON', fullName: '欧姆龙', country: '日本', color: '#005EB8' },
+        { name: 'MITSUBISHI', fullName: '三菱电机', country: '日本', color: '#E60012' },
+        { name: 'P+F', fullName: '倍加福', country: '德国', color: '#009640' },
+        { name: 'SIEMENS', fullName: '西门子', country: '德国', color: '#009999' },
+        { name: 'ROCKWELL', fullName: '罗克韦尔', country: '美国', color: '#D11D26' },
+        { name: 'LCM', fullName: '韩国LCM电主轴', country: '韩国', color: '#F39C12' },
+        { name: 'ABB', fullName: 'ABB', country: '瑞士', color: '#FF0000' },
+        { name: 'ELET', fullName: '意大利ELET主轴电机', country: '意大利', color: '#0056B3' },
+        { name: 'BMB', fullName: '韩国BMB电机', country: '韩国', color: '#FF0000' },
+        { name: 'NACOL', fullName: '日本纳克乐蓄能器', country: '日本', color: '#003087' }
+    ];
 
         const cases = [
             { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '某汽车零部件厂生产线自动化改造。为青岛某汽车零部件企业提供西门子S7-1500 PLC系统及 SINAMICS V90伺服系统，实现冲压生产线自动化控制。', tags: ['西门子 S7-1500', 'SINAMICS V90', 'KTP700 HMI'], icon: '🚗' },
