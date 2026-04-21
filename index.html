@@ -619,12 +619,24 @@
     gap: 1.5rem;
     margin-top: 2rem;
 }
-       .product-card {
+      .product-card {
             background: white;
             padding: 1.5rem;
             border-radius: 0.75rem;
-            border: 1px solid #eee;
+            /* 修改这里：1px变2px，颜色从#eee变深蓝色 */
+            border: 2px solid #0056b3; 
             transition: all 0.3s ease;
+            position: relative;
+            /* 增加一个淡淡的蓝色阴影，让它更有立体感 */
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.1);
+        }
+
+        /* 莉莉，再额外加一个鼠标经过时的变色效果，会更高级 */
+        .product-card:hover {
+            border-color: #007bff; /* 鼠标放上去时蓝色变亮 */
+            transform: translateY(-5px); /* 轻轻飘起 */
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
+        }
             position: relative;
             display: flex;
             flex-direction: column;
