@@ -196,14 +196,24 @@
 
         /* ===== Header/Navbar ===== */
 header {
-    background-color: #ffffff;
-    position: fixed;   
-    top: 40px;         
+    background-color: #1B4F72 !important; 
+    color: #ffffff !important;          
+    position: fixed;                    
+    top: 40px;                          
     left: 0;
     width: 100%;
-    z-index: 1000;     
+    z-index: 1000;                      
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+}
+
+header a {
+    color: #ffffff !important; 
+    text-decoration: none;             
+}
+
+header a:hover {
+    color: #ecf0f1 !important;
 }
 
         header.scrolled {
