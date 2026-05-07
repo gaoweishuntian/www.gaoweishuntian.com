@@ -2109,71 +2109,25 @@ header a:hover {
     </div>
 
     <script>
-       // Products data
-        const translations = {
-            'zh': {
-                nav_home: '首页',
-                nav_products: '产品中心',
-                nav_brands: '品牌代理',
-                nav_services: '技术服务',
-                nav_cases: '成功案例',
-                nav_about: '关于我们',
-                nav_contact: '联系我们',
-                hotline_text: '咨询热线'
-            },
-            'en': {
-                nav_home: 'Home',
-                nav_products: 'Products',
-                nav_brands: 'Brands',
-                nav_services: 'Services',
-                nav_cases: 'Cases',
-                nav_about: 'About Us',
-                nav_contact: 'Contact',
-                hotline_text: 'Hotline'
-            }
-        }; // <-- 确保这里有括号和分号结尾
-
-        // 默认当前语言
-        let currentLang = 'zh';
-
-        function switchLanguage() {
-            currentLang = currentLang === 'zh' ? 'en' : 'zh';
-            const dict = translations[currentLang];
-            const elements = document.querySelectorAll('[data-lang-key]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-lang-key');
-                if (dict[key]) {
-                    el.textContent = dict[key];
-                }
-            });
-
-            const btn = document.querySelector('button');
-            if (btn) {
-                btn.textContent = currentLang === 'zh' ? 'English' : '中文';
-            }
-        }
-
-            console.log(`🌐 已切换语言为: ${currentLang}`);
-        }
-
-      // Products data
+        // Products data
         const products = [
-            { category: 'reducer', name: '德国 STEP 减速机', brand: 'STEP', desc: '德国精密制造，专注机器人关节及高端自动化高转矩方案', tags: ['精密制造', '高转矩'] },
-            { category: 'reducer', name: '台湾精锐 APEX', brand: 'APEX', desc: '全球精密行星减速机领导品牌，具备高刚性、低背隙', tags: ['低背隙', '高效率'] },
-            { category: 'reducer', name: '苏州帝奥卡', brand: 'DIOCARD', desc: '国产精密传动优秀代表，提供性能稳定、性价比极高的行星减速机', tags: ['性价比', '行星减速'] },
-            { category: 'reducer', name: '德国 SEW 减速机', brand: 'SEW', desc: '全球驱动技术专家，以模块化组合著称，提供可靠动力传输', tags: ['模块化', '可靠性'] },
-            { category: 'controller', name: '奥地利 KEBA 控制', brand: 'KEBA', desc: '专注于工业机器人与注塑机控制系统，助力高度自动化', tags: ['机器人控制', '注塑机'] },
-            { category: 'reducer', name: '北京智同 RV 减速机', brand: 'ZITONG', desc: '专注高精密 RV 减速机研发，为工业机器人提供核心关节', tags: ['RV减速', '国产自研'] },
-            { category: 'reducer', name: 'TSUNTIEN 台湾村田 RV', brand: 'TSUNTIEN', desc: '高精度 RV 减速机专家，广泛应用于精密机械手臂与转台', tags: ['精密转台', 'RV系列'] },
-            { category: 'reducer', name: '台湾法斯顿减速机', brand: 'FASTON', desc: '高性价比精密行星减速机，为自动化设备提供稳健支撑', tags: ['行星减速', '稳健性'] },
-            { category: 'reducer', name: '多摩川 Tamagawa', brand: 'TAMAGAWA', desc: '日本技术背景，高品质伺服专用减速机与编码器', tags: ['伺服专用', '高精度'] },
-            { category: 'reducer', name: '贝托 BEITTO 减速机', brand: 'BEITTO', desc: '精密行星减速机系列，支持多种规格定制，货期短', tags: ['定制化', '快速响应'] },
-            { category: 'reducer', name: '德国库德班 KOLDBAN', brand: 'KOLDBAN', desc: '高端精密机械部件供应商，专注于工业传动系统的配套', tags: ['精密部件', '德国品质'] },
-            { category: 'motor', name: '韩国 LCM 电机', brand: 'LCM', desc: '韩国原装进口，高精度伺服电机与直驱驱动方案', tags: ['原装进口', '伺服电机'] }
-        ];
-        // 2.
-   // 2. 
-// 1. 
+           { category: 'reducer', name: '德国 STEP 减速机', brand: 'STEP', desc: '德国精密制造，专注机器人关节及高端自动化高转矩方案', tags: ['精密制造', '高转矩'] },
+    { category: 'reducer', name: '台湾精锐 APEX', brand: 'APEX', desc: '全球精密行星减速机领导品牌，具备高刚性、低背隙', tags: ['低背隙', '高效率'] },
+    { category: 'reducer', name: '苏州帝奥卡', brand: 'DIOCARD', desc: '国产精密传动优秀代表，提供性能稳定、性价比极高的行星减速机', tags: ['性价比', '行星减速'] },
+    { category: 'reducer', name: '德国 SEW 减速机', brand: 'SEW', desc: '全球驱动技术专家，以模块化组合著称，提供可靠动力传输', tags: ['模块化', '可靠性'] },
+    { category: 'controller', name: '奥地利 KEBA 控制', brand: 'KEBA', desc: '专注于工业机器人与注塑机控制系统，助力高度自动化', tags: ['机器人控制', '注塑机'] },
+    { category: 'reducer', name: '北京智同 RV 减速机', brand: 'ZITONG', desc: '专注高精密 RV 减速机研发，为工业机器人提供核心关节', tags: ['RV减速', '国产自研'] },
+    { category: 'reducer', name: 'TSUNTIEN 台湾村田 RV', brand: 'TSUNTIEN', desc: '高精度 RV 减速机专家，广泛应用于精密机械手臂与转台', tags: ['精密转台', 'RV系列'] },
+    { category: 'reducer', name: '台湾法斯顿减速机', brand: 'FASTON', desc: '高性价比精密行星减速机，为自动化设备提供稳健支撑', tags: ['行星减速', '稳健性'] },
+    { category: 'reducer', name: '多摩川 Tamagawa', brand: 'TAMAGAWA', desc: '日本技术背景，高品质伺服专用减速机与编码器', tags: ['伺服专用', '高精度'] },
+    { category: 'reducer', name: '贝托 BEITTO 减速机', brand: 'BEITTO', desc: '精密行星减速机系列，支持多种规格定制，货期短', tags: ['定制化', '快速响应'] },
+    { category: 'reducer', name: '德国库德班 KOLDBAN', brand: 'KOLDBAN', desc: '高端精密机械部件供应商，专注于工业传动系统的配套', tags: ['精密部件', '德国品质'] },
+    { category: 'motor', name: '韩国 LCM 电机', brand: 'LCM', desc: '韩国原装进口，高精度伺服电机与直驱驱动方案', tags: ['原装进口', '伺服电机'] }
+            ];
+
+        // 2. 品牌列表 (补全至 28 个，确保完美方阵)
+   // 2. 品牌列表 (已补全至 28 个，CUSTOM 在最后)
+// 1. 品牌列表 (共 28 个，SMC等已加，定制在最后)
     const brands = [
         { name: 'APEX', fullName: '台湾精锐APEX减速机', country: '台湾', color: '#004A99' },
         { name: 'STEP', fullName: '德国STEP史蒂芬自消隙减速机', country: '德国技术', color: '#0058a9' },
@@ -2205,14 +2159,14 @@ header a:hover {
         { name: 'CUSTOM', fullName: '各类非标定制服务', country: '技术服务', color: '#2c3e50' }
     ];
 
-    // 2.
+    // 2. 成功案例 (全网页仅此一份，内容最全)
     const cases = [
         { title: '汽车零部件', location: '青岛市城阳区', result: '效率有效提升', desc: '实现冲压生产线自动化控制。', icon: '🚗' },
         { title: '食品饮料', location: '青岛市即墨区', result: '能源有效降低', desc: '实现电机软启动和变频调速。', icon: '🏭' },
         { title: '化工制造', location: '青岛市黄岛区', result: '稳定性有效提升', desc: '化工厂DCS系统升级改造方案。', icon: '⚗️' },
         { title: '港口物流', location: '青岛港', result: '装卸效率提升', desc: '港口起重设备电气系统改造。', icon: '🚢' },
         { title: '纺织机械', location: '青岛市胶州市', result: '产品质量提升', desc: '伺服控制系统升级方案。', icon: '🧵' },
-      { title: '数控中心', location: '青岛市高新区', result: '加工精度提升', desc: '电主轴变频驱动及精密伺服控制方案。', icon: '⚡' }
+        { title: '电子制造', location: '青岛李沧区', result: '检测效率提升', desc: 'SMT贴片生产线自动化控制。', icon: '📱' }
     ];
 
     // 3. 渲染函数
