@@ -165,19 +165,24 @@
 
         /* ===== Announcement Bar ===== */
         .announcement {
-            background: linear-gradient(90deg, #1B4F72, #2E7D9E);
-            color: white;
-            padding: 0.75rem 0;
-            overflow: hidden;
-            position: relative;
-            z-index: 45;
-        }
+    background: linear-gradient(90deg, #1B4F72, #2E7D9E);
+    color: white;
+    height: 40px; 
+    padding: 0; 
+    overflow: hidden;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000; 
+}
 
-        .announcement-content {
-            display: flex;
-            animation: scroll-left 20s linear infinite;
-            white-space: nowrap;
-        }
+.announcement-content {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+    line-height: 40px; 
+}
 
         .announcement-item {
             padding: 0 2rem;
@@ -190,18 +195,19 @@
         }
 
         /* ===== Header/Navbar ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
+header {
+    background-color: #ffffff;
+    position: fixed;   
+    top: 40px;         
+    left: 0;
+    width: 100%;
+    z-index: 1000;     
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
 
         header.scrolled {
-            background: rgba(27, 79, 114, 0.97);
+            background: #1B4F72;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
         }
